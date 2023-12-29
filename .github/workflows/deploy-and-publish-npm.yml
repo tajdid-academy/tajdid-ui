@@ -53,6 +53,13 @@ jobs:
           # Bump the patch version
           npm version patch --no-git-tag-version
 
+          # Get the new version from package.json
+          NEW_VERSION=$(node -p -e "require('./package.json').version")
+
+          # Commit the updated package.json
+          git add package.json
+          git commit -m "Bump version to $NEW_VERSION [skip ci]"
+
           # Publish to npm
           npm publish
         env:
