@@ -23,6 +23,11 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
           ~/.npmrc
 
+      - name: Set up Git credentials
+        run: |
+          git config --global user.email "mbmohib@example.com"
+          git config --global user.name "Mohammad Mohibbullah"
+
       - name: Bump version and publish to npm
         run: |
           # Bump the minor version

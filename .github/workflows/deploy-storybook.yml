@@ -18,11 +18,6 @@ jobs:
         with:
           node-version: 20
 
-      - name: Set up Git credentials
-        run: |
-          git config --global user.email "mbmohib@example.com"
-          git config --global user.name "Mohammad Mohibbullah"
-
       - name: Install dependencies
         run: npm install
 
