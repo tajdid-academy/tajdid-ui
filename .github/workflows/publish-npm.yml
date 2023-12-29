@@ -37,7 +37,7 @@ jobs:
       - name: Bump version and publish to npm
         run: |
           # Bump the patch version
-          npm version patch
+          npm version patch --no-git-tag-version
 
           # Publish to npm
           npm publish
