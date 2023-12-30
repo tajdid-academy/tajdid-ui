@@ -20,6 +20,18 @@
     "noUnusedParameters": true, // Flags unused function parameters.
     "noFallthroughCasesInSwitch": true, // Requires handling all cases in a switch statement.
     "declaration": true, // Generates declaration files for TypeScript.
+
+    /* Path */
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@icons/*": ["icons/*"],
+      "@hooks/*": ["hooks/*"],
+      "@assets/*": ["assets/*"],
+      "@config/*": ["config/*"],
+      "@utils/*": ["utils/*"],
+    },
   },
   "include": ["src"], // Specifies the directory to include when searching for TypeScript files.
   "exclude": [
