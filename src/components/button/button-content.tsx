@@ -1,10 +1,10 @@
-import React from "react";
-import { SpinnerIcon } from "../../icons";
+import React from 'react';
+import { SpinnerIcon } from '../../icons';
 
 export type ButtonContentProps = {
   isLoading?: boolean;
   icon?: React.ReactNode;
-  iconPosition?: "start" | "end";
+  iconPosition?: 'start' | 'end';
   loadingText?: string;
   children?: React.ReactNode;
 };
@@ -19,7 +19,7 @@ export default function ButtonContent({
   if (isLoading) {
     return (
       <>
-        <span className={loadingText && "mr-2"}>
+        <span className={loadingText && 'mr-2'}>
           <SpinnerIcon />
         </span>
         {loadingText}
@@ -27,7 +27,7 @@ export default function ButtonContent({
     );
   }
 
-  if (icon && iconPosition === "start") {
+  if (icon && iconPosition === 'start') {
     return (
       <>
         {icon && <span className="mr-2">{icon}</span>}
@@ -36,7 +36,7 @@ export default function ButtonContent({
     );
   }
 
-  if (icon && iconPosition === "end") {
+  if (icon && iconPosition === 'end') {
     return (
       <>
         {children}
