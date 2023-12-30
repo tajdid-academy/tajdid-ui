@@ -1,4 +1,4 @@
-export * from './buttons';
+export * from './button';
 export * from './input';
 export * from './error-message';
 export * from './password-input';

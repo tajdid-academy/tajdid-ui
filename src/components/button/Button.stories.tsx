@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Button from './button';
+import { XCloseIcon } from '../../icons';
 
 const meta = {
   title: 'Button',
@@ -18,7 +19,11 @@ const meta = {
       control: { type: 'radio' },
     },
     variant: {
-      options: ['default', 'outlined', 'ghost'],
+      options: ['contained', 'outlined', 'ghost', 'link', 'icon'],
+      control: { type: 'radio' },
+    },
+    color: {
+      options: ['primary', 'gray', 'warning', 'error'],
       control: { type: 'radio' },
     },
     disabled: {
@@ -44,7 +49,40 @@ export default meta;
 
 export const Contained: Story = {
   args: {
-    variant: 'error',
+    variant: 'contained',
+    color: 'primary',
     children: 'Button',
+  },
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'primary',
+    children: 'Button',
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    color: 'primary',
+    children: 'Button',
+  },
+};
+
+export const Link: Story = {
+  args: {
+    variant: 'link',
+    color: 'primary',
+    children: 'Button',
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    variant: 'icon',
+    color: 'primary',
+    children: <XCloseIcon />,
   },
 };
