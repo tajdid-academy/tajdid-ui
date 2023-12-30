@@ -5,7 +5,7 @@ import { ErrorIcon } from '../../icons';
 import { cn } from '../../utils';
 
 export const inputVariants = cva(
-  'flex items-center self-stretch  w-full rounded-sm bg-white border border-gray-300  text-base text-gray-900 font-normal  shadow-sm ring-offset-backgroud  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100 disabled:opacity-50',
+  'flex items-center self-stretch  w-full rounded-sm bg-white border border-gray-300  text-base text-gray-900 font-normal  shadow-sm ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100',
   {
     variants: {
       size: {
@@ -25,6 +25,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
     endIcon?: React.ReactNode;
     inputClassName?: string;
     warning?: string;
+    label?: string;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -39,6 +40,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       endIcon,
       error,
       warning,
+      label,
       ...props
     },
     ref,
@@ -52,9 +54,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
 
     const endIconOrErrorIcon = error ? <ErrorIcon /> : endIcon;
+    const id = React.useId();
 
     return (
       <div className={className}>
+        <div className="mb-2">
+          <label id={id} className="text-sm font-medium text-gray-700">
+            {label}
+          </label>
+        </div>
         <div className="relative">
           {startIcon && (
             <span className="absolute -translate-y-1/2 top-1/2 left-3">
@@ -64,6 +72,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
           <input
             type={type}
+            id={id}
             placeholder={placeholder}
             className={cn(
               inputVariants({ size, className: combinedInputClassName }),
