@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Button from './button';
-import { XCloseIcon } from '../../icons';
+import Button from '../button';
+// import { XCloseIcon } from '../../../icons';
 
 const meta = {
   title: 'Button',
@@ -79,10 +79,10 @@ export const Link: Story = {
   },
 };
 
-export const Icon: Story = {
-  args: {
-    variant: 'icon',
-    color: 'primary',
-    children: <XCloseIcon />,
-  },
-};
+// export const Icon: Story = {
+//   args: {
+//     variant: 'icon',
+//     color: 'primary',
+//     children: <XCloseIcon />,
+//   },
+// };
