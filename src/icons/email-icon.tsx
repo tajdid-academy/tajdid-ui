@@ -13,7 +13,7 @@ export default function EmailIcon({ className }: Props) {
       className={className}
     >
       <path
-        stroke="#697586"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.667"

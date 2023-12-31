@@ -1,13 +1,15 @@
 type Props = {
   className?: string;
+  width?: string;
+  height?: string;
 };
 
-const XCloseIcon = ({ className }: Props) => {
+const XCloseIcon = ({ className, width = '20', height = '20' }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width={width}
+      height={height}
       viewBox="0 0 20 20"
       fill="none"
       className={className}
