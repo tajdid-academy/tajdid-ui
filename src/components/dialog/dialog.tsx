@@ -3,14 +3,11 @@ import { Button } from '..';
 import { XCloseIcon } from '@/icons';
 import { cn } from '@/utils';
 import { VariantProps, cva } from 'class-variance-authority';
+import React from 'react';
 
 type ChildrenProps = {
   children: React.ReactNode;
   className?: string;
-};
-
-const Dialog = ({ children }: ChildrenProps) => {
-  return <DialogPrimitive.Root>{children}</DialogPrimitive.Root>;
 };
 
 const dialogMainVariants = cva(
@@ -29,6 +26,18 @@ const dialogMainVariants = cva(
 );
 
 type DialogMainProps = VariantProps<typeof dialogMainVariants> & ChildrenProps;
+
+const Dialog = ({ children, ...props }: DialogMainProps) => {
+  return (
+    <DialogPrimitive.Root>
+      {React.Children.map(children, child => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, { ...props });
+        }
+      })}
+    </DialogPrimitive.Root>
+  );
+};
 
 const DialogMain = ({ children, className, size }: DialogMainProps) => {
   return (
@@ -51,7 +60,7 @@ const DialogMain = ({ children, className, size }: DialogMainProps) => {
 
 const DialogTitle = ({ children, className }: ChildrenProps) => (
   <DialogPrimitive.Title
-    className={cn('mb-2 px-6 text-lg font-semibold text-gray-900', className)}
+    className={cn('px-6 text-lg font-semibold text-gray-900', className)}
   >
     {children}
   </DialogPrimitive.Title>
@@ -80,7 +89,7 @@ const DialogAction = ({ children, className }: ChildrenProps) => (
 );
 
 const dialogIconVariants = cva(
-  'ml-6 inline-flex  items-center justify-center w-12 h-12 mb-6 border-8 rounded-full ',
+  'ml-6 inline-flex  items-center justify-center w-12 h-12 mb-4 border-8 rounded-full ',
   {
     variants: {
       color: {
