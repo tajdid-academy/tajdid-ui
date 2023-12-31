@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Button from '../button';
+import Button from './button';
 // import { XCloseIcon } from '../../../icons';
 
 const meta = {
-  title: 'Button',
+  title: 'Components/Button',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -27,6 +27,10 @@ const meta = {
       control: { type: 'radio' },
     },
     disabled: {
+      control: 'boolean',
+      defaultValue: false,
+    },
+    fullWidth: {
       control: 'boolean',
       defaultValue: false,
     },

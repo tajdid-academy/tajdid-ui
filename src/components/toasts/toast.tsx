@@ -46,8 +46,8 @@ export const Toast = forwardRef<
   { onOpenChange, title, description, variant = 'success', action },
   forwardedRef,
 ) {
-  let width = 416;
-  let margin = 16;
+  const width = 416;
+  const margin = 16;
 
   return (
     <ToastPrimitives.Root
@@ -105,7 +105,9 @@ export const Toast = forwardRef<
 
 export const ToastAction = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Action>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action> & {
+    className?: string;
+  }
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Action
     ref={ref}
@@ -117,7 +119,9 @@ ToastAction.displayName = ToastPrimitives.Action.displayName;
 
 export const ToastViewport = forwardRef<
   React.ElementRef<typeof ToastPrimitives.Viewport>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport> & {
+    className?: string;
+  }
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Viewport
     ref={ref}
