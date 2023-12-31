@@ -16,13 +16,21 @@ export default function App() {
           <Dialog.Trigger>
             <Button>Open</Button>
           </Dialog.Trigger>
-          <Dialog.Content>
-            <Dialog.Icon>
-              <EmailIcon className="text-error-600" />
+          <Dialog.Main>
+            <Dialog.Icon color="error">
+              <EmailIcon />
             </Dialog.Icon>
             <Dialog.Title>Logout</Dialog.Title>
             <Dialog.Subtitle>Are you sure you want to logout?</Dialog.Subtitle>
-
+            <Dialog.Divider className="mt-6" />
+            <Dialog.Content>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+                consectetur facere voluptatum sit at, iure eum corrupti, quia
+                libero, consequatur cum magnam! Delectus sunt eius dignissimos
+                at eaque rem numquam.
+              </p>
+            </Dialog.Content>
             <Dialog.CloseButton />
             <Dialog.Action>
               <Dialog.Close asChild>
@@ -41,7 +49,7 @@ export default function App() {
                 Yes
               </Button>
             </Dialog.Action>
-          </Dialog.Content>
+          </Dialog.Main>
         </Dialog.Root>
       </div>
     </div>
