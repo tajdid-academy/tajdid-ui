@@ -1,6 +1,6 @@
 import { cn } from '../../utils';
 
-type Props = {
+export type ImageProps = {
   src: string;
   alt?: string;
   width?: number;
@@ -8,7 +8,13 @@ type Props = {
   className?: string;
 };
 
-export default function Image({ src, alt, className, width, height }: Props) {
+export default function Image({
+  src,
+  alt,
+  className,
+  width,
+  height,
+}: ImageProps) {
   return (
     <img
       className={cn('block max-w-full', className)}
