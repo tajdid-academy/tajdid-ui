@@ -167,6 +167,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loadingText,
       color,
       children,
+      fullWidth,
       ...props
     },
     ref,
@@ -175,7 +176,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, color, className }))}
+        className={cn(
+          buttonVariants({ variant, size, color, className, fullWidth }),
+        )}
         ref={ref}
         {...props}
       >
