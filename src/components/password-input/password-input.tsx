@@ -24,11 +24,13 @@ const PasswordInput = React.forwardRef<
       placeholder,
       onChange,
       enableRules,
+      label,
       error,
       ...props
     },
     ref,
   ) => {
+    const id = React.useId();
     const [showPassword, setShowPassword] = useState(false);
     const [capsError, setCapsError] = useState(false);
 
@@ -56,6 +58,11 @@ const PasswordInput = React.forwardRef<
 
     return (
       <div className={className}>
+        <div className="mb-2">
+          <label id={id} className="text-sm font-medium text-gray-700">
+            {label}
+          </label>
+        </div>
         <div className="relative">
           <Input
             onKeyDown={handleKeyDown}

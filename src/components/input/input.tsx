@@ -45,6 +45,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref,
   ) => {
+    const id = React.useId();
     const combinedInputClassName = cn(
       startIcon && 'pl-[38px]',
       endIcon && 'pr-[44px]',
@@ -54,15 +55,16 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
 
     const endIconOrErrorIcon = error ? <ErrorIcon /> : endIcon;
-    const id = React.useId();
 
     return (
       <div className={className}>
-        <div className="mb-2">
-          <label id={id} className="text-sm font-medium text-gray-700">
-            {label}
-          </label>
-        </div>
+        {label && (
+          <div className="mb-2">
+            <label id={id} className="text-sm font-medium text-gray-700">
+              {label}
+            </label>
+          </div>
+        )}
         <div className="relative">
           {startIcon && (
             <span className="absolute -translate-y-1/2 top-1/2 left-3">

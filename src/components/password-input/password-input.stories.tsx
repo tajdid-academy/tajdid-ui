@@ -39,5 +39,7 @@ type Story = StoryObj<typeof meta>;
 export default meta;
 
 export const Password: Story = {
-  args: {},
+  args: {
+    label: 'Password',
+  },
 };
