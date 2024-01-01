@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-body font-title bg-primary-25;
+    @apply bg-white text-body font-title;
   }
 }
 
