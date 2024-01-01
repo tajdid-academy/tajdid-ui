@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { EyeCloseIcon, EyeOpenIcon, LockIcon } from '../../icons';
 import Input, { InputProps } from '../input/input';
 import { Tooltip } from '../tooltip';
 import ValidationStatusItem from './ValidationStatusItem';
 import usePasswordSchema from './usePasswordSchema';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const PasswordInput = React.forwardRef<
   HTMLInputElement,
   InputProps & {
     enableRules?: boolean;
+    onPasswordValidation?: (isValid: boolean) => void;
   }
 >(
   (
@@ -24,6 +26,7 @@ const PasswordInput = React.forwardRef<
       placeholder,
       onChange,
       enableRules,
+      onPasswordValidation,
       label,
       error,
       ...props
@@ -34,7 +37,12 @@ const PasswordInput = React.forwardRef<
     const [showPassword, setShowPassword] = useState(false);
     const [capsError, setCapsError] = useState(false);
 
-    const { handlePasswordValidation, passwordState } = usePasswordSchema();
+    const { handlePasswordValidation, passwordState, isValidPassword } =
+      usePasswordSchema();
+
+    useEffect(() => {
+      onPasswordValidation?.(isValidPassword);
+    }, [isValidPassword, onPasswordValidation]);
 
     const handleShowHidePassword = () => {
       setShowPassword(!showPassword);
@@ -100,21 +108,31 @@ const PasswordInput = React.forwardRef<
             </Tooltip.Root>
           </div>
         </div>
-        <div className={`${enableRules && 'mt-6'}`}>
+        <AnimatePresence initial={false}>
           {enableRules && (
-            <p className="mb-2 text-sm font-medium text-gray-600">
-              Your password must have:
-            </p>
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: 'auto' }}
+              exit={{ height: 0 }}
+              style={{ overflow: 'hidden' }}
+            >
+              <div className="mt-6">
+                <p className="mb-2 text-sm font-medium text-gray-600">
+                  Your password must have:
+                </p>
+                {Object.entries(passwordState).map(
+                  ([key, { isValid, message }]) => (
+                    <ValidationStatusItem
+                      key={key}
+                      isValid={isValid}
+                      text={message}
+                    />
+                  ),
+                )}
+              </div>
+            </motion.div>
           )}
-          {enableRules &&
-            Object.entries(passwordState).map(([key, { isValid, message }]) => (
-              <ValidationStatusItem
-                key={key}
-                isValid={isValid}
-                text={message}
-              />
-            ))}
-        </div>
+        </AnimatePresence>
       </div>
     );
   },
