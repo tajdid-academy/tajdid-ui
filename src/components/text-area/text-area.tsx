@@ -36,7 +36,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         <p className="font-normal text-gray-600">
-          This is a hint text to help user.
+          Please don’t exceed 300 characters.
         </p>
       </div>
     );
