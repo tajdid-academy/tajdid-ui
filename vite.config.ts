@@ -10,6 +10,9 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setupTests.ts',
   },
+  server: {
+    port: 4004,
+  },
   build: {
     lib: {
       entry: './src/index.ts', // Specifies the entry point for building the library.
