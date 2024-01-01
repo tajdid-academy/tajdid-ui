@@ -36,19 +36,37 @@ const reducer = (
 ) => {
   switch (action.type) {
     case 'SET_LENGTH_VALID':
-      return { ...state, length: { ...state.length, isValid: action.payload } };
+      return {
+        ...state,
+        length: {
+          ...state.length,
+          isValid: action.payload,
+        },
+      };
     case 'SET_UPPERCASE_VALID':
       return {
         ...state,
-        uppercase: { ...state.uppercase, isValid: action.payload },
+        uppercase: {
+          ...state.uppercase,
+          isValid: action.payload,
+        },
       };
     case 'SET_LOWERCASE_VALID':
       return {
         ...state,
-        lowercase: { ...state.lowercase, isValid: action.payload },
+        lowercase: {
+          ...state.lowercase,
+          isValid: action.payload,
+        },
       };
     case 'SET_NUMBER_VALID':
-      return { ...state, number: { ...state.number, isValid: action.payload } };
+      return {
+        ...state,
+        number: {
+          ...state.number,
+          isValid: action.payload,
+        },
+      };
     case 'SET_SPECIALCHAR_VALID':
       return {
         ...state,
@@ -79,8 +97,11 @@ export default function usePasswordSchema() {
     });
   };
 
+  const isValidPassword = Object.values(state).every(item => item.isValid);
+
   return {
     handlePasswordValidation,
     passwordState: state,
+    isValidPassword,
   };
 }
