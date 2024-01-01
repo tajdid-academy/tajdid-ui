@@ -58,10 +58,10 @@ const PasswordInput = React.forwardRef<
       }
 
       if (showPassword) {
-        return <EyeOpenIcon />;
+        return <EyeCloseIcon />;
       }
 
-      return <EyeCloseIcon />;
+      return <EyeOpenIcon />;
     };
 
     return (
