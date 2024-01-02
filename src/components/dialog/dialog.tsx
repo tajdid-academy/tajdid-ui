@@ -118,7 +118,7 @@ const DialogCloseButton = () => {
       aria-label="Close"
       className="absolute top-2 right-2 focus-visible:outline-none"
     >
-      <Button size="icon" variant="ghost" color="error">
+      <Button variant="icon">
         <XCloseIcon className="text-gray-500" width="24" height="24" />
       </Button>
     </DialogPrimitive.Close>
