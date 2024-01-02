@@ -26,11 +26,8 @@ const dialogMainVariants = cva(
 );
 
 export type DialogMainProps = VariantProps<typeof dialogMainVariants> &
-  ChildrenProps & {
-    open?: boolean;
-    defaultOpen?: boolean;
-    onOpenChange?: (open: boolean) => void;
-  };
+  ChildrenProps &
+  DialogPrimitive.DialogProps;
 
 const Dialog = ({
   children,
