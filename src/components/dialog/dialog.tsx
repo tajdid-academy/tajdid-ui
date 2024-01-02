@@ -1,5 +1,4 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { DialogProps } from '@radix-ui/react-dialog';
 import { Button } from '..';
 import { XCloseIcon } from '@/icons';
 import { cn } from '@/utils';
@@ -26,9 +25,12 @@ const dialogMainVariants = cva(
   },
 );
 
-type DialogMainProps = VariantProps<typeof dialogMainVariants> &
-  ChildrenProps &
-  DialogProps;
+export type DialogMainProps = VariantProps<typeof dialogMainVariants> &
+  ChildrenProps & {
+    open?: boolean;
+    defaultOpen?: boolean;
+    onOpenChange?: (open: boolean) => void;
+  };
 
 const Dialog = ({
   children,
