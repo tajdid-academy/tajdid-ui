@@ -1,4 +1,5 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { DialogProps } from '@radix-ui/react-dialog';
 import { Button } from '..';
 import { XCloseIcon } from '@/icons';
 import { cn } from '@/utils';
@@ -25,11 +26,23 @@ const dialogMainVariants = cva(
   },
 );
 
-type DialogMainProps = VariantProps<typeof dialogMainVariants> & ChildrenProps;
+type DialogMainProps = VariantProps<typeof dialogMainVariants> &
+  ChildrenProps &
+  DialogProps;
 
-const Dialog = ({ children, ...props }: DialogMainProps) => {
+const Dialog = ({
+  children,
+  open,
+  onOpenChange,
+  defaultOpen,
+  ...props
+}: DialogMainProps) => {
   return (
-    <DialogPrimitive.Root>
+    <DialogPrimitive.Root
+      open={open}
+      defaultOpen={defaultOpen}
+      onOpenChange={onOpenChange}
+    >
       {React.Children.map(children, child => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { ...props });
