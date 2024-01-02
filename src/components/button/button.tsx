@@ -13,7 +13,7 @@ export const buttonVariants = cva(
         outlined: '',
         ghost: '',
         link: '',
-        icon: '',
+        icon: 'py-[6px] px-[6px] min-w-0',
       },
       color: {
         primary: '',
@@ -24,7 +24,6 @@ export const buttonVariants = cva(
       size: {
         medium: 'py-[8px] px-[20px] text-base',
         small: 'py-[6px] px-[14px] text-sm',
-        icon: 'py-[6px] px-[6px] min-w-0',
       },
       fullWidth: {
         true: 'w-full',
