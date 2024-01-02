@@ -8,3 +8,5 @@ export * from './password-input';
 export * from './text-area';
 export * from './toasts';
 export * from './tooltip';
+export * from './checkbox';
+export * from './label';

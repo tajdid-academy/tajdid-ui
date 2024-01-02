@@ -1,7 +1,7 @@
 {
   "name": "@tajdid/tajdid-ui",
   "private": false,
-  "version": "0.0.39",
+  "version": "0.0.42",
   "description": "A React UI library for Tajdid Academy",
   "scripts": {
     "dev": "vite",
@@ -79,7 +79,9 @@
     ]
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "framer-motion": "^10.16.16"

@@ -25,11 +25,23 @@ const dialogMainVariants = cva(
   },
 );
 
-type DialogMainProps = VariantProps<typeof dialogMainVariants> & ChildrenProps;
+export type DialogMainProps = VariantProps<typeof dialogMainVariants> &
+  ChildrenProps &
+  DialogPrimitive.DialogProps;
 
-const Dialog = ({ children, ...props }: DialogMainProps) => {
+const Dialog = ({
+  children,
+  open,
+  onOpenChange,
+  defaultOpen,
+  ...props
+}: DialogMainProps) => {
   return (
-    <DialogPrimitive.Root>
+    <DialogPrimitive.Root
+      open={open}
+      defaultOpen={defaultOpen}
+      onOpenChange={onOpenChange}
+    >
       {React.Children.map(children, child => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { ...props });

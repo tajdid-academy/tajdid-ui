@@ -2,6 +2,7 @@ import Dialog from './dialog';
 import { Button } from '..';
 import { EmailIcon } from '@/icons';
 import { useArgs } from '@storybook/preview-api';
+import { useState } from 'react';
 
 const meta = {
   title: 'Components/Dialog',
@@ -10,6 +11,17 @@ const meta = {
     layout: 'centered',
   },
   argTypes: {
+    open: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+    },
+    defaultOpen: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+    },
+    onOpenChange: {
+      action: 'onOpenChange',
+    },
     size: {
       options: ['sm', 'md'],
       control: { type: 'radio' },
@@ -31,12 +43,14 @@ export const Default = {
   args: {
     size: 'sm',
     children: 'Dialog',
+    open: false,
   },
   render: function Render() {
     const [args] = useArgs();
+    const [open, setOpen] = useState(args.open);
 
     return (
-      <Dialog.Root size={args.size}>
+      <Dialog onOpenChange={open => setOpen(open)} open={open} size={args.size}>
         <Dialog.Trigger>
           <Button>Open Dialog</Button>
         </Dialog.Trigger>
@@ -71,7 +85,7 @@ export const Default = {
             </Button>
           </Dialog.Action>
         </Dialog.Main>
-      </Dialog.Root>
+      </Dialog>
     );
   },
 };
@@ -86,7 +100,7 @@ export const WithHeaderIcon = {
     const [args] = useArgs();
 
     return (
-      <Dialog.Root size={args.size}>
+      <Dialog size={args.size}>
         <Dialog.Trigger>
           <Button>Open Dialog</Button>
         </Dialog.Trigger>
@@ -124,7 +138,7 @@ export const WithHeaderIcon = {
             </Button>
           </Dialog.Action>
         </Dialog.Main>
-      </Dialog.Root>
+      </Dialog>
     );
   },
 };
