@@ -19,6 +19,10 @@ const meta = {
       control: 'text',
       defaultValue: 'Placeholder',
     },
+    error: {
+      control: 'text',
+      defaultValue: '',
+    },
     disabled: {
       control: 'boolean',
       defaultValue: false,
