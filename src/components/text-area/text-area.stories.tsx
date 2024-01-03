@@ -19,6 +19,14 @@ const meta = {
       control: 'text',
       defaultValue: 'Placeholder',
     },
+    hintText: {
+      control: 'text',
+      defaultValue: 'Hint text',
+    },
+    error: {
+      control: 'text',
+      defaultValue: '',
+    },
     disabled: {
       control: 'boolean',
       defaultValue: false,
