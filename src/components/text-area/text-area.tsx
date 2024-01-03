@@ -23,10 +23,14 @@ export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> &
     cols?: number;
     className?: string;
     error?: string;
+    hintText?: string;
   };
 
 const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, rows = 4, cols, size, placeholder, error, ...props }, ref) => {
+  (
+    { className, rows = 4, cols, size, placeholder, error, hintText, ...props },
+    ref,
+  ) => {
     const combinedTextAreaClassName = cn(
       error &&
         'border-error ring-error-200 focus-visible:border-error focus-visible:ring-error-200',
@@ -45,9 +49,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         {error && <ErrorMessage message={error} />}
-        <p className="font-normal text-gray-600">
-          Please don’t exceed 300 characters.
-        </p>
+        <p className="font-normal text-gray-600">{hintText}</p>
       </div>
     );
   },
