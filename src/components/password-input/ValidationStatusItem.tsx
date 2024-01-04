@@ -1,4 +1,4 @@
-import CheckIcon from '../../icons/check-icon';
+import CheckIcon from '../../icons/check-circle-icon';
 import InfoCircleIcon from '../../icons/info-circle-icon';
 
 type ValidationStatusItemProps = {
