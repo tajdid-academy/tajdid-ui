@@ -1,14 +1,13 @@
-import { IconProps } from './icon-props';
+import { withIcon, IconProps } from './with-svg';
 
-export default function DashboardIcon({ className }: IconProps) {
+function DashboardIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       fill="none"
-      viewBox="0 0 24 24"
-      className={className}
+      width={24}
+      height={24}
+      {...props}
     >
       <path
         stroke="currentcolor"
@@ -20,3 +19,5 @@ export default function DashboardIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export default withIcon(DashboardIcon);

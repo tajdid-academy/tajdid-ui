@@ -2,11 +2,12 @@ import * as ToastPrimitives from '@radix-ui/react-toast';
 import { cva, VariantProps } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import React, { ElementRef, forwardRef } from 'react';
-import AlertErrorIcon from '../../icons/alert-error-icon';
+
 import AlertSuccessIcon from '../../icons/alert-success-icon';
 import AlertWarningIcon from '../../icons/alert-warning-icon';
-import XCloseIcon from '../../icons/x-close-icon';
+import { XCloseIcon } from '@/icons';
 import { cn } from '../../utils';
+import { AlertErrorIcon } from '@/icons';
 
 export const ToastPrimitivesProvider = ToastPrimitives.Provider;
 
