@@ -11,3 +11,4 @@ export * from './tooltip';
 export * from './checkbox';
 export * from './label';
 export * from './select';
+export * from './search';

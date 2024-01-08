@@ -1,50 +1,9 @@
 import './styles/app.css';
-import { Select } from './components/select';
 import { useState } from 'react';
-
-const roles = {
-  superAdmin: 'SUPER_ADMIN',
-  admin: 'ADMIN',
-  learner: 'LEARNER',
-  instructor: 'INSTRUCTOR',
-  supportInstructor: 'SUPPORT_INSTRUCTOR',
-  moderator: 'MODERATOR',
-  batchCoordinator: 'BATCH_COORDINATOR',
-};
-
-const roleOptions = [
-  {
-    label: 'Super Admin',
-    value: roles.superAdmin,
-  },
-  {
-    label: 'Admin',
-    value: roles.admin,
-  },
-  {
-    label: 'Learner',
-    value: roles.learner,
-  },
-  {
-    label: 'Instructor',
-    value: roles.instructor,
-  },
-  {
-    label: 'Support Instructor',
-    value: roles.supportInstructor,
-  },
-  {
-    label: 'Moderator',
-    value: roles.moderator,
-  },
-  {
-    label: 'Batch Coordinator',
-    value: roles.batchCoordinator,
-  },
-];
+import Search from './components/search/search';
 
 export default function App() {
-  const [value, setValue] = useState<string>('LEARNER');
+  const [value, setValue] = useState<string>('');
 
   return (
     <div className="container">
@@ -53,15 +12,12 @@ export default function App() {
         testing.
       </h1>
       <div id="playground">
-        {/* Play inside this div */}
-        <Select
+        <Search
           value={value}
-          onChange={e => {
-            console.log(e);
-            setValue(e);
+          onChange={e => setValue(e.target.value)}
+          onClick={() => {
+            console.log('clicked:', value);
           }}
-          label="Role"
-          options={roleOptions}
         />
       </div>
     </div>
