@@ -1,26 +1,24 @@
-import { IconProps } from './icon-props';
+import { IconProps, withIcon } from './with-svg';
 
-export default function HomeIcon({
-  className,
-  width = 24,
-  height = 24,
-}: IconProps) {
+function HomeIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
-      viewBox="0 0 24 24"
       fill="none"
-      className={className}
+      viewBox="0 0 20 20"
+      width={20}
+      height={20}
+      {...props}
     >
       <path
         stroke="currentcolor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="2"
-        d="M8 17h8M11.018 2.764L4.235 8.039c-.453.353-.68.53-.843.75a2 2 0 00-.318.65C3 9.704 3 9.991 3 10.565V17.8c0 1.12 0 1.68.218 2.108a2 2 0 00.874.874C4.52 21 5.08 21 6.2 21h11.6c1.12 0 1.68 0 2.108-.218a2 2 0 00.874-.874C21 19.48 21 18.92 21 17.8v-7.235c0-.574 0-.861-.074-1.126a2.002 2.002 0 00-.318-.65c-.163-.22-.39-.397-.843-.75l-6.783-5.275c-.351-.273-.527-.41-.72-.462a1 1 0 00-.523 0c-.194.052-.37.189-.721.462z"
+        strokeWidth="1.667"
+        d="M6.667 14.167h6.666M9.181 2.303L3.53 6.7c-.377.294-.566.441-.702.625-.12.163-.21.347-.265.542-.062.22-.062.46-.062.938v6.03c0 .933 0 1.4.182 1.756.16.314.414.569.728.729.357.181.823.181 1.757.181h9.666c.934 0 1.4 0 1.757-.181a1.66 1.66 0 00.728-.729c.182-.356.182-.823.182-1.757v-6.03c0-.478 0-.718-.062-.938a1.665 1.665 0 00-.265-.542c-.136-.184-.325-.33-.702-.625L10.82 2.303c-.293-.227-.44-.341-.601-.385a.834.834 0 00-.436 0c-.161.044-.308.158-.6.385z"
       ></path>
     </svg>
   );
 }
+
+export default withIcon(HomeIcon);

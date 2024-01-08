@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { DownArrowIcon, CheckOutlineIcon } from '@/icons';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { cn } from '@/utils';
 import { VariantProps, cva } from 'class-variance-authority';
+import { CheckIcon, DownArrowIcon } from '@/icons';
 
 type Props = {
   children?: React.ReactNode;
@@ -133,7 +133,7 @@ const SelectItem = React.forwardRef<
   >
     <span className="absolute hover:outline-none right-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <CheckOutlineIcon className="text-primary-600" />
+        <CheckIcon className="text-primary-600" />
       </SelectPrimitive.ItemIndicator>
     </span>
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
