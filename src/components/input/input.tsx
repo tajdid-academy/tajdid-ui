@@ -61,7 +61,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
 
     return (
-      <div className={className}>
+      <div className={cn(className, 'w-full')}>
         {label && (
           <div className="mb-2">
             <label id={id} className="text-sm font-medium text-gray-700">

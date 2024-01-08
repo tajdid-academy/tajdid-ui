@@ -26,3 +26,4 @@ export { default as SettingsIcon } from './settings-icon';
 export { default as ToolTipIcon } from './tool-tip';
 export { default as SpinnerIcon } from './spinner-icon';
 export { default as XCloseIcon } from './x-close-icon';
+export { default as SearchIcon } from './search-icon';
