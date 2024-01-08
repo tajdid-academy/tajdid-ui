@@ -1,24 +1,24 @@
-type Props = {
-  className?: string;
-};
+import { IconProps, withIcon } from './with-svg';
 
-export default function LockIcon({ className }: Props) {
+function LockIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
       fill="none"
-      className={className}
+      viewBox="0 0 20 20"
+      width={20}
+      height={20}
+      {...props}
     >
       <path
-        d="M5.91753 8.33333H5.83335V6.66667C5.83335 4.36548 7.69883 2.5 10 2.5C12.3012 2.5 14.1667 4.36548 14.1667 6.66667V8.33333H14.0825M10 11.6667V13.3333M15.8334 12.5C15.8334 15.7217 13.2217 18.3333 10 18.3333C6.77836 18.3333 4.16669 15.7217 4.16669 12.5C4.16669 9.27834 6.77836 6.66667 10 6.66667C13.2217 6.66667 15.8334 9.27834 15.8334 12.5Z"
-        stroke="#697586"
-        strokeWidth="1.5"
+        stroke="currentcolor"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
+        strokeWidth="1.5"
+        d="M5.917 8.333h-.084V6.667a4.167 4.167 0 118.334 0v1.666h-.085M10 11.667v1.666m5.833-.833a5.833 5.833 0 11-11.666 0 5.833 5.833 0 0111.666 0z"
+      ></path>
     </svg>
   );
 }
+
+export default withIcon(LockIcon);

@@ -1,12 +1,12 @@
 import { withIcon, IconProps } from './with-svg';
 
-function CheckCircleIcon(props: IconProps) {
+function CheckSuccessIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 14 14"
-      width="14"
-      height="14"
+      width={14}
+      height={14}
       fill="none"
       {...props}
     >
@@ -21,4 +21,4 @@ function CheckCircleIcon(props: IconProps) {
   );
 }
 
-export default withIcon(CheckCircleIcon);
+export default withIcon(CheckSuccessIcon);

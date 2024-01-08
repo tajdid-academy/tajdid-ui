@@ -1,23 +1,21 @@
-type Props = {
-  className?: string;
-};
+import { IconProps, withIcon } from './with-svg';
 
-const ToolTip = ({ className }: Props) => {
+const ToolTip = (props: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="17"
-      height="9"
-      viewBox="0 0 17 9"
       fill="none"
-      className={className}
+      viewBox="0 0 17 9"
+      width={17}
+      height={9}
+      {...props}
     >
       <path
-        d="M14.5711 0.485289C15.462 0.485289 15.9081 1.56243 15.2782 2.1924L9.20711 8.26347C8.81658 8.654 8.18342 8.654 7.79289 8.26347L1.72183 2.1924C1.09187 1.56243 1.53803 0.485289 2.42894 0.485289L14.5711 0.485289Z"
-        fill="white"
-      />
+        fill="#fff"
+        d="M14.571.485c.891 0 1.337 1.077.707 1.707l-6.07 6.071a1 1 0 01-1.415 0l-6.071-6.07c-.63-.63-.184-1.708.707-1.708H14.57z"
+      ></path>
     </svg>
   );
 };
 
-export default ToolTip;
+export default withIcon(ToolTip);

@@ -1,19 +1,17 @@
-type Props = {
-  className?: string;
-};
+import { withIcon, IconProps } from './with-svg';
 
-export default function EmailIcon({ className }: Props) {
+function EmailIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
       fill="none"
       viewBox="0 0 20 20"
-      className={className}
+      width={20}
+      height={20}
+      {...props}
     >
       <path
-        stroke="currentColor"
+        stroke="currentcolor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.667"
@@ -22,3 +20,5 @@ export default function EmailIcon({ className }: Props) {
     </svg>
   );
 }
+
+export default withIcon(EmailIcon);
