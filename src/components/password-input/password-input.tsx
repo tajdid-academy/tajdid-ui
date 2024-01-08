@@ -58,10 +58,10 @@ const PasswordInput = React.forwardRef<
       }
 
       if (showPassword) {
-        return <EyeCloseIcon />;
+        return <EyeCloseIcon className="text-gray-500" />;
       }
 
-      return <EyeOpenIcon />;
+      return <EyeOpenIcon className="text-gray-500" />;
     };
 
     return (
@@ -75,7 +75,7 @@ const PasswordInput = React.forwardRef<
           <Input
             onKeyDown={handleKeyDown}
             inputClassName={inputClassName}
-            startIcon={<LockIcon />}
+            startIcon={<LockIcon className="text-gray-500" />}
             ref={ref}
             type={showPassword ? 'text' : 'password'}
             placeholder={placeholder}
@@ -120,15 +120,17 @@ const PasswordInput = React.forwardRef<
                 <p className="mb-2 text-sm font-medium text-gray-600">
                   Your password must have:
                 </p>
-                {Object.entries(passwordState).map(
-                  ([key, { isValid, message }]) => (
-                    <ValidationStatusItem
-                      key={key}
-                      isValid={isValid}
-                      text={message}
-                    />
-                  ),
-                )}
+                <div className="mb-2">
+                  {Object.entries(passwordState).map(
+                    ([key, { isValid, message }]) => (
+                      <ValidationStatusItem
+                        key={key}
+                        isValid={isValid}
+                        text={message}
+                      />
+                    ),
+                  )}
+                </div>
               </div>
             </motion.div>
           )}
