@@ -11,7 +11,7 @@ export default function Label({ children, className, htmlFor }: Props) {
   return (
     <LabelPrimitive.Root
       className={cn(
-        'text-sm font-medium text-gray-700 hover:cursor-pointer',
+        'text-sm font-medium text-gray-700 hover:cursor-pointer block',
         className,
       )}
       htmlFor={htmlFor}
