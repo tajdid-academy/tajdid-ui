@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const PasswordInput = React.forwardRef<
   HTMLInputElement,
-  InputProps & {
+  Omit<InputProps, 'type' | 'startIcon' | 'endIcon'> & {
     enableRules?: boolean;
     onPasswordValidation?: (isValid: boolean) => void;
   }
@@ -16,12 +16,6 @@ const PasswordInput = React.forwardRef<
   (
     {
       className,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      type,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      startIcon,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      endIcon,
       inputClassName,
       placeholder,
       onChange,

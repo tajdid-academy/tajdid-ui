@@ -1,5 +1,6 @@
 import { SearchIcon } from '@/icons';
 import { Button, Input, InputProps, Label } from '..';
+import { useId } from 'react';
 
 export type SearchProps = InputProps & {
   onClick?: () => void;
@@ -12,11 +13,14 @@ export default function Search({
   disabled,
   ...rest
 }: SearchProps) {
+  const id = useId();
+
   return (
     <div>
-      {label && <Label>{label}</Label>}
+      {label && <Label htmlFor={id}>{label}</Label>}
       <div className="flex">
         <Input
+          id={id}
           disabled={disabled}
           startIcon={<SearchIcon className="text-gray-500" />}
           placeholder={placeholder ?? 'Search'}

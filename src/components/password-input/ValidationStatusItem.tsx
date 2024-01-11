@@ -11,7 +11,7 @@ export default function ValidationStatusItem({
   text,
 }: ValidationStatusItemProps) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 mb-2">
       {isValid ? <CheckIcon /> : <InfoCircleIcon />}
       <p className="text-sm font-normal text-gray-700">{text}</p>
     </div>
