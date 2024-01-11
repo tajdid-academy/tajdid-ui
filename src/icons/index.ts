@@ -1,4 +1,5 @@
 export { default as AlertCircleIcon } from './alert-circle-icon';
+export { default as ArrowLeftIcon } from './arrow-left-icon';
 export { default as AlertErrorIcon } from './alert-error-icon';
 export { default as AlertSuccessIcon } from './alert-success-icon';
 export { default as AlertWarningIcon } from './alert-warning-icon';
