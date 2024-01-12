@@ -1,7 +1,7 @@
 {
   "name": "@tajdid/tajdid-ui",
   "private": false,
-  "version": "0.0.51",
+  "version": "0.0.50",
   "description": "A React UI library for Tajdid Academy",
   "scripts": {
     "dev": "vite",
@@ -28,7 +28,8 @@
     },
     "./icons": {
       "import": "./dist/icons.es.js",
-      "require": "./dist/icons.cjs.js"
+      "require": "./dist/icons.cjs.js",
+      "types": "./dist/icons/index.d.ts"
     }
   },
   "files": [
