@@ -30,6 +30,10 @@
       "import": "./dist/icons.es.js",
       "require": "./dist/icons.cjs.js",
       "types": "./dist/icons/index.d.ts"
+    },
+    "./styles": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "files": [
