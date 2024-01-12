@@ -15,9 +15,15 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: './src/index.ts', // Specifies the entry point for building the library.
+      entry: { index: './src/index.ts', icons: './src/icons/index.ts' }, // Specifies the entry point for building the library.
       name: 'tajdid-ui', // Sets the name of the generated library.
-      fileName: format => `index.${format}.js`, // Generates the output file name based on the format.
+      fileName: (format, name) => {
+        if (format === 'es') {
+          return `${name}.es.js`;
+        }
+
+        return `${name}.${format}`;
+      }, // Generates the output file name based on the format.
       formats: ['cjs', 'es'], // Specifies the output formats (CommonJS and ES modules).
     },
     rollupOptions: {
