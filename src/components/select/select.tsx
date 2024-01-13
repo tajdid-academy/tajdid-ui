@@ -33,7 +33,7 @@ export default function SelectComponent({
   label,
   className,
   fullWidth,
-  placeholder = 'Select role',
+  placeholder = 'Select...',
   error,
 }: SelectProps) {
   return (
