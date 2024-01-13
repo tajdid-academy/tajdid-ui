@@ -5,5 +5,5 @@ type Props = {
 export default function ErrorMessage({ message }: Props) {
   if (!message) return null;
 
-  return <p className="mt-1 text-sm text-error-500">{message}</p>;
+  return <p className="mt-2 text-sm text-error-500">{message}</p>;
 }

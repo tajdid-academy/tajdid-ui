@@ -1,9 +1,9 @@
-import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { Button } from '..';
 import { XCloseIcon } from '@/icons';
 import { cn } from '@/utils';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { VariantProps, cva } from 'class-variance-authority';
 import React from 'react';
+import { Button } from '..';
 
 type ChildrenProps = {
   children: React.ReactNode;
@@ -128,7 +128,7 @@ const DialogCloseButton = () => {
     <DialogPrimitive.Close
       asChild
       aria-label="Close"
-      className="absolute top-2 right-2 focus-visible:outline-none"
+      className="absolute top-6 right-5 focus-visible:outline-none"
     >
       <Button variant="icon">
         <XCloseIcon className="text-gray-500" width="24" height="24" />

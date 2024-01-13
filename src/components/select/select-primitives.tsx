@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as SelectPrimitive from '@radix-ui/react-select';
-import { cn } from '@/utils';
-import { VariantProps, cva } from 'class-variance-authority';
 import { CheckIcon, DownArrowIcon } from '@/icons';
+import { cn } from '@/utils';
+import * as SelectPrimitive from '@radix-ui/react-select';
+import { VariantProps, cva } from 'class-variance-authority';
+import * as React from 'react';
 
 type Props = {
   children?: React.ReactNode;
@@ -155,12 +155,12 @@ SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
 export {
   Select,
-  SelectGroup,
-  SelectValue,
-  SelectTrigger,
   SelectContent,
+  SelectGroup,
   SelectItem,
-  SelectSeparator,
-  SelectScrollUpButton,
   SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
 };
