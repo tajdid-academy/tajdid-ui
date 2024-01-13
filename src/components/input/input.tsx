@@ -1,8 +1,8 @@
+import { AlertCircleIcon } from '@/icons';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 import { ErrorMessage } from '..';
 import { cn } from '../../utils';
-import { AlertCircleIcon } from '@/icons';
 
 export const inputVariants = cva(
   'flex items-center self-stretch  w-full rounded-sm bg-white border border-gray-300  text-base text-gray-900 font-normal  shadow-sm ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100',
@@ -95,7 +95,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         </div>
         {error && <ErrorMessage message={error} />}
         {warning && !error && (
-          <p className="text-sm text-warning-600">{warning}</p>
+          <p className="text-sm mt-2 text-warning-600">{warning}</p>
         )}
       </div>
     );
