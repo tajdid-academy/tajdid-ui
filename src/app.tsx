@@ -1,3 +1,4 @@
+import { Progress } from '.';
 import './styles/app.css';
 
 export default function App() {
@@ -7,7 +8,10 @@ export default function App() {
         Use this to run a local development environment of the library for
         testing.
       </h1>
-      <div id="playground">{/*  */}</div>
+      <div id="playground">
+        {/*  */}
+        <Progress value={40} />
+      </div>
     </div>
   );
 }
