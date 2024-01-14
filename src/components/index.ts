@@ -13,3 +13,5 @@ export * from './label';
 export * from './select';
 export * from './search';
 export * from './progress';
+export * from './circle-progress';
+export * from './accordion';
