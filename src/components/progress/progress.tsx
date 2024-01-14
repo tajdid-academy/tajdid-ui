@@ -18,7 +18,7 @@ export default function Progress({ value, className }: ProgressProps) {
   return (
     <ProgressPrimitive.Root
       className={cn(
-        'relative overflow-hidden bg-gray-200 rounded-xs w-full h-2',
+        'relative overflow-hidden bg-gray-200 rounded-xs h-2',
         className,
       )}
       style={{

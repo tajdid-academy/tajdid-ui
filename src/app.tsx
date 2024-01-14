@@ -1,6 +1,7 @@
 import './styles/app.css';
 import { useState } from 'react';
 import Search from './components/search/search';
+import { Progress } from '.';
 
 export default function App() {
   const [value, setValue] = useState<string>('');
@@ -12,13 +13,7 @@ export default function App() {
         testing.
       </h1>
       <div id="playground">
-        <Search
-          value={value}
-          onChange={e => setValue(e.target.value)}
-          onClick={() => {
-            console.log('clicked:', value);
-          }}
-        />
+        <Progress className="" value={40} />
       </div>
     </div>
   );

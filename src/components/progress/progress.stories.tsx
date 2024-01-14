@@ -11,12 +11,15 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {
-    // range control
     value: {
       control: 'range',
       min: 0,
       max: 100,
       defaultValue: 40,
+    },
+    // className
+    className: {
+      control: 'text',
     },
   },
 } satisfies Meta<typeof Progress>;
@@ -28,5 +31,6 @@ export default meta;
 export const Default: Story = {
   args: {
     value: 40,
+    className: 'w-[300px]',
   },
 };
