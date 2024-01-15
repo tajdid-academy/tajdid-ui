@@ -1,4 +1,4 @@
-import { Progress } from '.';
+import { Search } from '.';
 import './styles/app.css';
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       </h1>
       <div id="playground">
         {/*  */}
-        <Progress value={40} />
+        <Search />
       </div>
     </div>
   );
