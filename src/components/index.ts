@@ -15,3 +15,4 @@ export * from './search';
 export * from './progress';
 export * from './circle-progress';
 export * from './accordion';
+export * from './stepper';
