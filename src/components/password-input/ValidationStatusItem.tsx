@@ -1,5 +1,4 @@
-import CheckIcon from '../../icons/check-success-icon';
-import InfoCircleIcon from '../../icons/info-circle-icon';
+import { CheckSuccessIcon, InfoCircleIcon } from '../../icons';
 
 type ValidationStatusItemProps = {
   isValid: boolean;
@@ -12,7 +11,11 @@ export default function ValidationStatusItem({
 }: ValidationStatusItemProps) {
   return (
     <div className="flex items-center gap-2 mb-2">
-      {isValid ? <CheckIcon /> : <InfoCircleIcon />}
+      {isValid ? (
+        <CheckSuccessIcon className="text-primary-600" />
+      ) : (
+        <InfoCircleIcon />
+      )}
       <p className="text-sm font-normal text-gray-700">{text}</p>
     </div>
   );

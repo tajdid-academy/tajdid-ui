@@ -34,4 +34,6 @@ export { default as ToolTipIcon } from './tool-tip';
 export { default as SpinnerIcon } from './spinner-icon';
 export { default as XCloseIcon } from './x-close-icon';
 export { default as SearchIcon } from './search-icon';
+export { default as DotIcon } from './dot-icon';
+export { default as DotIconV2 } from './dot-icon-v2';
 export type { IconProps } from './icon-props';
