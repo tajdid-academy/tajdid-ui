@@ -29,7 +29,7 @@ export default function Search({
         />
         <Button
           disabled={disabled}
-          className="min-w-0 px-3 py-2 rounded-ss-none rounded-es-none"
+          className="!min-w-0 px-3 py-2 rounded-ss-none rounded-es-none"
           onClick={onClick}
         >
           <SearchIcon className="text-white" />
