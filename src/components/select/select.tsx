@@ -21,6 +21,7 @@ export type SelectProps = {
   disabled?: boolean;
   label?: string;
   className?: string;
+  labelClassName?: string;
   fullWidth?: boolean;
   error?: string;
 };
@@ -31,6 +32,7 @@ export default function SelectComponent({
   options,
   disabled,
   label,
+  labelClassName,
   className,
   fullWidth,
   placeholder = 'Select...',
@@ -38,7 +40,9 @@ export default function SelectComponent({
 }: SelectProps) {
   return (
     <div className={className}>
-      {label && <Label className="mb-[6px]">{label}</Label>}
+      {label && (
+        <Label className={cn('mb-[8px]', labelClassName)}>{label}</Label>
+      )}
       <Select disabled={disabled} value={value} onValueChange={onChange}>
         <SelectTrigger
           error={!!error}

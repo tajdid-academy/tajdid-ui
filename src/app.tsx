@@ -1,5 +1,10 @@
+import { Input, Select } from '.';
 import './styles/app.css';
 
+export const categoryOptions = [
+  { value: 'QURAN', label: 'Quran' },
+  { value: 'HADITH', label: 'Hadith' },
+];
 export default function App() {
   return (
     <div className="container">
@@ -7,7 +12,10 @@ export default function App() {
         Use this to run a local development environment of the library for
         testing.
       </h1>
-      <div id="playground"></div>
+      <div id="playground" className="flex gap-6">
+        <Select options={categoryOptions} label="Select" />
+        <Input placeholder="place" label="Input" />
+      </div>
     </div>
   );
 }
