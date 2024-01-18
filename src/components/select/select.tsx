@@ -41,7 +41,7 @@ export default function SelectComponent({
   return (
     <div className={className}>
       {label && (
-        <Label className={cn('mb-[6px]', labelClassName)}>{label}</Label>
+        <Label className={cn('mb-[8px]', labelClassName)}>{label}</Label>
       )}
       <Select disabled={disabled} value={value} onValueChange={onChange}>
         <SelectTrigger
