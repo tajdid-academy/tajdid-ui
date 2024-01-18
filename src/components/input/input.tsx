@@ -1,11 +1,11 @@
 import { AlertCircleIcon } from '@/icons';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
-import { ErrorMessage } from '..';
+import { ErrorMessage, Label } from '..';
 import { cn } from '../../utils';
 
 export const inputVariants = cva(
-  'flex items-center self-stretch  w-full rounded-sm bg-white border border-gray-300  text-base text-gray-900 font-normal  shadow-sm ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100',
+  'flex items-center self-stretch  w-full rounded-sm bg-white border border-gray-300  text-base text-gray-900 font-normal  shadow-xs ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100',
   {
     variants: {
       size: {
@@ -64,9 +64,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className={cn(className, 'w-full')}>
         {label && (
           <div className="mb-2">
-            <label id={id} className="text-sm font-medium text-gray-700">
-              {label}
-            </label>
+            <Label className="text-sm font-medium text-gray-700">{label}</Label>
           </div>
         )}
         <div className="relative">
@@ -95,7 +93,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         </div>
         {error && <ErrorMessage message={error} />}
         {warning && !error && (
-          <p className="text-sm mt-2 text-warning-600">{warning}</p>
+          <p className="mt-2 text-sm text-warning-600">{warning}</p>
         )}
       </div>
     );
