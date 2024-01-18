@@ -7,13 +7,13 @@ export const categoryOptions = [
 ];
 export default function App() {
   return (
-    <div className="container">
+    <div className="container min-h-screen bg-gray-100">
       <h1 className="py-4 text-center text-md">
         Use this to run a local development environment of the library for
         testing.
       </h1>
       <div id="playground" className="flex gap-6">
-        <Select options={categoryOptions} label="Select" />
+        <Select className="w-full" options={categoryOptions} label="Select" />
         <Input placeholder="place" label="Input" />
       </div>
     </div>

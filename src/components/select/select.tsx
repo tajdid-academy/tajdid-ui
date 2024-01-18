@@ -47,7 +47,7 @@ export default function SelectComponent({
         <SelectTrigger
           error={!!error}
           fullWidth={fullWidth}
-          className={cn('min-w-full')}
+          className={cn('min-w-full bg-white')}
         >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
