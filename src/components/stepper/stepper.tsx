@@ -1,4 +1,4 @@
-import { DotIcon, CheckSuccessIcon } from '@/icons';
+import { CheckSuccessIcon, DotIcon } from '@/icons';
 import DotIconV2 from '@/icons/dot-icon-v2';
 import { cn } from '@/utils';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
@@ -52,7 +52,7 @@ export default function Stepper({
         <CheckSuccessIcon
           width={24}
           height={24}
-          outlineColor="#F0FDFA"
+          outlinecolor="#F0FDFA"
           className="text-primary-600"
         />
       );

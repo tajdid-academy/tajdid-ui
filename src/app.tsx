@@ -1,10 +1,30 @@
-import { Input, Select } from '.';
+import { Stepper } from '.';
 import './styles/app.css';
 
-export const categoryOptions = [
-  { value: 'QURAN', label: 'Quran' },
-  { value: 'HADITH', label: 'Hadith' },
+const steps = [
+  {
+    label: 'Course Details',
+    content: 'I am one',
+    isCompleted: true,
+  },
+  {
+    label: 'Course Curriculum',
+    content: 'I am step two',
+    isCompleted: true,
+  },
+  {
+    label: 'Other Details',
+    content: 'I am step three',
+    isCompleted: true,
+  },
+  {
+    label: 'Publish request',
+    content: 'I am step four',
+    isCompleted: true,
+    disabled: true,
+  },
 ];
+
 export default function App() {
   return (
     <div className="container min-h-screen bg-gray-100">
@@ -13,8 +33,7 @@ export default function App() {
         testing.
       </h1>
       <div id="playground" className="flex gap-6">
-        <Select className="w-full" options={categoryOptions} label="Select" />
-        <Input placeholder="place" label="Input" />
+        <Stepper steps={steps} />
       </div>
     </div>
   );
