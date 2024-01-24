@@ -1,4 +1,4 @@
-import { withIcon, IconProps } from './with-svg';
+import { IconProps, withIcon } from './with-svg';
 
 function DotIcon(props: IconProps) {
   return (
@@ -13,7 +13,7 @@ function DotIcon(props: IconProps) {
       <rect
         width="24"
         height="24"
-        fill={props.outlineColor ?? '#F0FDFA'}
+        fill={props.outlinecolor ?? '#F0FDFA'}
         rx="12"
       ></rect>
       <circle cx="12" cy="12" r="4" fill="currentColor"></circle>

@@ -1,4 +1,4 @@
-import { withIcon, IconProps } from './with-svg';
+import { IconProps, withIcon } from './with-svg';
 
 function CheckSuccessIcon(props: IconProps) {
   return (
@@ -14,7 +14,7 @@ function CheckSuccessIcon(props: IconProps) {
         width="14"
         height="14"
         rx="7"
-        fill={props.outlineColor ?? '#D1FADF'}
+        fill={props.outlinecolor ?? '#D1FADF'}
       />
       <path
         fillRule="evenodd"
