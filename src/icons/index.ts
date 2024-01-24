@@ -45,4 +45,5 @@ export { default as ToolTipIcon } from './tool-tip';
 export { default as UserIcon } from './user-icon';
 export { default as UsersIcon } from './users-icon';
 export { default as VerticalDotsIcon } from './vertical-dots-icon';
+export { default as XCircleIcon } from './x-circle-icon';
 export { default as XCloseIcon } from './x-close-icon';
