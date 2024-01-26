@@ -1,29 +1,6 @@
-import { Stepper } from '.';
+import ButtonPreview from './previews/button/button-preview';
+import StepperPreview from './previews/stepper/stepper-preview';
 import './styles/app.css';
-
-const steps = [
-  {
-    label: 'Course Details',
-    content: 'I am one',
-    isCompleted: true,
-  },
-  {
-    label: 'Course Curriculum',
-    content: 'I am step two',
-    isCompleted: true,
-  },
-  {
-    label: 'Other Details',
-    content: 'I am step three',
-    isCompleted: true,
-  },
-  {
-    label: 'Publish request',
-    content: 'I am step four',
-    isCompleted: true,
-    disabled: true,
-  },
-];
 
 export default function App() {
   return (
@@ -33,7 +10,14 @@ export default function App() {
         testing.
       </h1>
       <div id="playground" className="flex gap-6">
-        <Stepper steps={steps} />
+        <div className="grid gap-6">
+          <div>
+            <ButtonPreview />
+          </div>
+          <div>
+            <StepperPreview />
+          </div>
+        </div>
       </div>
     </div>
   );

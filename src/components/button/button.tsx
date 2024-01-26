@@ -13,11 +13,10 @@ export const buttonVariants = cva(
         outlined: '',
         ghost: '',
         link: '',
-        icon: 'py-[6px] px-[6px] min-w-0',
+        icon: '',
       },
       color: {
         primary: '',
-        warning: '',
         error: '',
         gray: '',
       },
@@ -37,7 +36,6 @@ export const buttonVariants = cva(
       },
       {
         variant: 'contained',
-        color: 'warning',
         className: 'bg-warning hover:bg-warning-700 text-white',
       },
       {
@@ -58,7 +56,6 @@ export const buttonVariants = cva(
       },
       {
         variant: 'outlined',
-        color: 'warning',
         className:
           'border border-warning hover:bg-warning text-warning hover:text-white',
       },
@@ -81,7 +78,6 @@ export const buttonVariants = cva(
       },
       {
         variant: 'ghost',
-        color: 'warning',
         className: 'text-warning hover:text-warning-600 !shadow-none',
       },
       {
@@ -98,45 +94,47 @@ export const buttonVariants = cva(
         variant: 'link',
         color: 'primary',
         className:
-          'text-primary-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline',
+          'text-primary-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
       },
       {
         variant: 'link',
-        color: 'warning',
         className:
-          'text-warning-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline',
+          'text-warning-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
       },
       {
         variant: 'link',
         color: 'error',
         className:
-          'text-error-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline',
+          'text-error-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
       },
       {
         variant: 'link',
         color: 'gray',
         className:
-          'text-gray-700 text-sm font-semibold !shadow-none underline-offset-4 hover:underline',
+          'text-gray-700 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
       },
       {
         variant: 'icon',
         color: 'primary',
-        className: 'text-primary-600 text-sm font-semibold !shadow-none p-0',
+        className:
+          'text-primary-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-primary-50',
       },
       {
         variant: 'icon',
-        color: 'warning',
-        className: 'text-warning-600 text-sm font-semibold !shadow-none p-0',
+        className:
+          'text-warning-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-warning-50',
       },
       {
         variant: 'icon',
         color: 'error',
-        className: 'text-error-600 text-sm font-semibold !shadow-none p-0',
+        className:
+          'text-error-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 rounded-sm hover:bg-error-50',
       },
       {
         variant: 'icon',
         color: 'gray',
-        className: 'text-gray-700 text-sm font-semibold !shadow-none p-0',
+        className:
+          'text-gray-700 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-gray-50',
       },
     ],
     defaultVariants: {
