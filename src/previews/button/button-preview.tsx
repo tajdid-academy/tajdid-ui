@@ -6,10 +6,15 @@ export default function ButtonPreview() {
     <div className="grid gap-2">
       <p className="mb-2">Button</p>
       <div className="flex gap-2">
-        <Button>Contained</Button>
+        <Button color="primary">Contained</Button>
+        <Button icon={<HomeIcon />} color="primary">
+          Contained with icon
+        </Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="ghost">Ghost</Button>
-        <Button variant="link">Link</Button>
+        <Button variant="link" icon={<HomeIcon />} iconPosition="start">
+          Link
+        </Button>
         <Button variant="icon">
           <HomeIcon />
         </Button>

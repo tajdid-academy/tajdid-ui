@@ -13,7 +13,7 @@ export default function ButtonContent({
   isLoading,
   children,
   icon,
-  iconPosition,
+  iconPosition = 'end',
   loadingText,
 }: ButtonContentProps) {
   if (isLoading) {

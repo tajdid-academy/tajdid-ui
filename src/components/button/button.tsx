@@ -36,10 +36,6 @@ export const buttonVariants = cva(
       },
       {
         variant: 'contained',
-        className: 'bg-warning hover:bg-warning-700 text-white',
-      },
-      {
-        variant: 'contained',
         color: 'error',
         className: 'bg-error hover:bg-error-600 text-white',
       },
@@ -53,11 +49,6 @@ export const buttonVariants = cva(
         color: 'primary',
         className:
           'border border-primary hover:bg-primary text-primary hover:text-white',
-      },
-      {
-        variant: 'outlined',
-        className:
-          'border border-warning hover:bg-warning text-warning hover:text-white',
       },
       {
         variant: 'outlined',
@@ -78,10 +69,6 @@ export const buttonVariants = cva(
       },
       {
         variant: 'ghost',
-        className: 'text-warning hover:text-warning-600 !shadow-none',
-      },
-      {
-        variant: 'ghost',
         color: 'error',
         className: 'text-error hover:text-error-600 !shadow-none',
       },
@@ -95,11 +82,6 @@ export const buttonVariants = cva(
         color: 'primary',
         className:
           'text-primary-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
-      },
-      {
-        variant: 'link',
-        className:
-          'text-warning-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
       },
       {
         variant: 'link',
@@ -118,11 +100,6 @@ export const buttonVariants = cva(
         color: 'primary',
         className:
           'text-primary-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-primary-50',
-      },
-      {
-        variant: 'icon',
-        className:
-          'text-warning-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-warning-50',
       },
       {
         variant: 'icon',
