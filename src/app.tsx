@@ -1,5 +1,5 @@
-import { Tooltip } from '.';
-import InfoCircleIcon from './icons/info-circle-icon';
+import ButtonPreview from './previews/button/button-preview';
+import StepperPreview from './previews/stepper/stepper-preview';
 import './styles/app.css';
 
 export default function App() {
@@ -9,23 +9,15 @@ export default function App() {
         Use this to run a local development environment of the library for
         testing.
       </h1>
-      <div
-        id="playground"
-        className="flex items-center justify-center min-h-screen gap-6"
-      >
-        <Tooltip.Root>
-          <Tooltip.Trigger asChild>
-            <button className="unset" type="button">
-              <InfoCircleIcon className="w-5 h-5 text-gray-500 cursor-pointer" />
-            </button>
-          </Tooltip.Trigger>
+      <div id="playground" className="flex gap-6">
+        <div className="grid gap-6">
           <div>
-            <Tooltip.Content>
-              Module includes a structured sequence of lessons, quizzes allowing
-              to create a systematic learning experience for course.
-            </Tooltip.Content>
+            <ButtonPreview />
           </div>
-        </Tooltip.Root>
+          <div>
+            <StepperPreview />
+          </div>
+        </div>
       </div>
     </div>
   );
