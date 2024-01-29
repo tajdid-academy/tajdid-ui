@@ -1,8 +1,10 @@
+import { cn } from '@/utils';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import React from 'react';
 
 type Props = {
   children: React.ReactNode;
+  className?: string;
 };
 
 const Tooltip = ({ children }: Props) => {
@@ -15,14 +17,17 @@ const Tooltip = ({ children }: Props) => {
   );
 };
 
-const TooltipContent = ({ children }: Props) => (
+const TooltipContent = ({ children, className }: Props) => (
   <TooltipPrimitive.Portal>
     <TooltipPrimitive.Content
       style={{
         boxShadow:
           '0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
       }}
-      className="px-3 py-2 text-xs font-semibold text-gray-700 bg-white rounded-sm"
+      className={cn(
+        'max-w-[369px] px-3 py-2 text-xs font-semibold text-gray-700 bg-white rounded-sm',
+        className,
+      )}
       sideOffset={5}
     >
       {children}
