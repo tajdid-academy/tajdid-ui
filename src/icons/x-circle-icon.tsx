@@ -9,6 +9,7 @@ function XCircleIcon(props: IconProps) {
       height={16}
       {...props}
       fill="none"
+      viewBox="0 0 16 16"
     >
       <g clipPath="url(#a)">
         <path

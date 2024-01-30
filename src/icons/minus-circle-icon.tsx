@@ -9,6 +9,7 @@ function MinusCircleIcon(props: IconProps) {
       height={20} // dynamic height value
       {...props} //spread the props here
       fill="none"
+      viewBox="0 0 20 20"
     >
       <g clipPath="url(#a)">
         <path
