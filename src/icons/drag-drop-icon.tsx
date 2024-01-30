@@ -7,6 +7,7 @@ function DragDropIcon(props: IconProps) {
       xmlns="http://www.w3.org/2000/svg"
       width={13}
       height={16}
+      viewBox="0 0 13 16"
       {...props}
       fill="none"
     >

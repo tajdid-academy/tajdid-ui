@@ -9,6 +9,7 @@ function PlusCircleIcon(props: IconProps) {
       height={20}
       {...props}
       fill="none"
+      viewBox="0 0 20 20"
     >
       <g clipPath="url(#a)">
         <path
