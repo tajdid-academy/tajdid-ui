@@ -42,6 +42,7 @@ export { default as SpinnerIcon } from './spinner-icon';
 export { default as StopWatchIconIcon } from './stop-watch-icon';
 export { default as SupportIcon } from './support-icon';
 export { default as ToolTipIcon } from './tool-tip';
+export { default as TagIcon } from './tag-icon';
 export { default as UserIcon } from './user-icon';
 export { default as UsersIcon } from './users-icon';
 export { default as VerticalDotsIcon } from './vertical-dots-icon';
