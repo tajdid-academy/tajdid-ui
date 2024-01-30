@@ -9,6 +9,7 @@ function VerticalDotsIcon(props: IconProps) {
       height={20}
       {...props}
       fill="none"
+      viewBox="0 0 21 20"
     >
       <path
         stroke="currentcolor"

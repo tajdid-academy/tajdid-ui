@@ -9,6 +9,7 @@ function FolderIcon(props: IconProps) {
       height={52}
       {...props}
       fill="none"
+      viewBox="0 0 52 52"
     >
       <path
         stroke="currentcolor"
