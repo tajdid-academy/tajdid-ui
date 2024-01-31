@@ -106,6 +106,7 @@ const dialogIconVariants = cva(
     variants: {
       color: {
         error: 'text-error-600 border-error-50 bg-error-100',
+        success: 'text-primary-600 border-primary-50 bg-primary-100',
       },
     },
   },
