@@ -3,7 +3,7 @@ import { useId } from 'react';
 import { Button, Input, InputProps, Label } from '..';
 
 export type SearchProps = InputProps & {
-  onClick?: () => void;
+  onClick?: (e: React.SyntheticEvent) => void;
 };
 
 export default function Search({
