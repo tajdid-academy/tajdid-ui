@@ -3,7 +3,7 @@ import { useId } from 'react';
 import { Button, Input, InputProps, Label } from '..';
 
 export type SearchProps = InputProps & {
-  onClick?: () => void;
+  onClick: () => void;
 };
 
 export default function Search({
@@ -18,7 +18,13 @@ export default function Search({
   return (
     <div>
       {label && <Label htmlFor={id}>{label}</Label>}
-      <form className="flex">
+      <form
+        className="flex"
+        onSubmit={e => {
+          e.preventDefault();
+          onClick();
+        }}
+      >
         <Input
           id={id}
           disabled={disabled}
@@ -30,7 +36,7 @@ export default function Search({
         <Button
           disabled={disabled}
           className="!min-w-0 px-3 py-2 rounded-ss-none rounded-es-none"
-          onClick={onClick}
+          type="submit"
         >
           <SearchIcon className="text-white" />
         </Button>
