@@ -18,7 +18,7 @@ export default function Search({
   return (
     <div>
       {label && <Label htmlFor={id}>{label}</Label>}
-      <div className="flex">
+      <form className="flex">
         <Input
           id={id}
           disabled={disabled}
@@ -34,7 +34,7 @@ export default function Search({
         >
           <SearchIcon className="text-white" />
         </Button>
-      </div>
+      </form>
     </div>
   );
 }
