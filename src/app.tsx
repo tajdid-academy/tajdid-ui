@@ -1,5 +1,4 @@
-import ButtonPreview from './previews/button/button-preview';
-import StepperPreview from './previews/stepper/stepper-preview';
+import { ButtonPreview, StepperPreview, DropdownMenuPreview } from './previews';
 import './styles/app.css';
 
 export default function App() {
@@ -16,6 +15,9 @@ export default function App() {
           </div>
           <div>
             <StepperPreview />
+          </div>
+          <div>
+            <DropdownMenuPreview />
           </div>
         </div>
       </div>
