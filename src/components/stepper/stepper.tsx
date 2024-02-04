@@ -16,6 +16,7 @@ export type StepperProps = {
   rootClassName?: string;
   tabClassName?: string;
   contentClassName?: string;
+  onStepChange?: (step: number) => void;
 };
 
 const getActiveStep = (activeStep: string, index: number) => {
@@ -33,6 +34,7 @@ export default function Stepper({
   rootClassName,
   tabClassName,
   contentClassName,
+  onStepChange,
 }: StepperProps) {
   const [activeStep, setActiveStep] = useState('tab1');
 
@@ -64,7 +66,10 @@ export default function Stepper({
       className={rootClassName}
       value={activeStep}
       defaultValue="tab1"
-      onValueChange={setActiveStep}
+      onValueChange={value => {
+        setActiveStep(value);
+        onStepChange?.(Number(value.replace('tab', '')));
+      }}
     >
       <TabsPrimitive.List
         style={{
