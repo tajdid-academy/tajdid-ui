@@ -36,8 +36,6 @@ export default function Stepper({
 }: StepperProps) {
   const [activeStep, setActiveStep] = useState('tab1');
 
-  console.log('activeStep :>> ', activeStep);
-
   const getStepState = (
     activeStep: string,
     index: number,

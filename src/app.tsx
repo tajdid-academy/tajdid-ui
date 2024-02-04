@@ -1,4 +1,5 @@
 import { ButtonPreview, StepperPreview, DropdownMenuPreview } from './previews';
+import SelectPreview from './previews/select/select';
 import './styles/app.css';
 
 export default function App() {
@@ -18,6 +19,9 @@ export default function App() {
           </div>
           <div>
             <DropdownMenuPreview />
+          </div>
+          <div>
+            <SelectPreview />
           </div>
         </div>
       </div>
