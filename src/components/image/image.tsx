@@ -6,6 +6,7 @@ export type ImageProps = {
   width?: number;
   height?: number;
   className?: string;
+  fallbackSrc?: string;
 };
 
 export default function Image({
@@ -14,11 +15,12 @@ export default function Image({
   className,
   width,
   height,
+  fallbackSrc,
 }: ImageProps) {
   return (
     <img
       className={cn('block max-w-full', className)}
-      src={src}
+      src={src ?? fallbackSrc}
       alt={alt}
       width={width}
       height={height}
