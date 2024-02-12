@@ -7,8 +7,8 @@ function MortarboardIcon(props: IconProps) {
       width={18}
       height={18}
       fill="none"
-      viewBox="0 0 18 18"
       {...props}
+      viewBox="0 0 18 18"
     >
       <path
         fill="currentcolor"
