@@ -27,6 +27,7 @@ export { default as FileQuestionIcon } from './file-question-icon';
 export { default as FileUploadIcon } from './file-upload';
 export { default as FolderIcon } from './folder-icon';
 export { default as FolderPlusIcon } from './folder-plus-icon';
+export { default as FileDocumentIcon } from './file-document-icon';
 export { default as HomeIcon } from './home-icon';
 export type { IconProps } from './icon-props';
 export { default as InfoCircleIcon } from './info-circle-icon';
