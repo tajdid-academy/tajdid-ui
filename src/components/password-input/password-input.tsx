@@ -5,6 +5,8 @@ import { Tooltip } from '../tooltip';
 import ValidationStatusItem from './ValidationStatusItem';
 import usePasswordSchema from './usePasswordSchema';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Label } from '..';
+import { cn } from '@/utils';
 
 const PasswordInput = React.forwardRef<
   HTMLInputElement,
@@ -47,10 +49,6 @@ const PasswordInput = React.forwardRef<
     };
 
     const renderEndIcon = () => {
-      if (error || capsError) {
-        return '';
-      }
-
       if (showPassword) {
         return <EyeCloseIcon className="text-gray-500" />;
       }
@@ -61,9 +59,9 @@ const PasswordInput = React.forwardRef<
     return (
       <div className={className}>
         <div className="mb-2">
-          <label id={id} className="text-sm font-medium text-gray-700">
+          <Label htmlFor={id} className="text-sm font-medium text-gray-700">
             {label}
-          </label>
+          </Label>
         </div>
         <div className="relative">
           <Input
@@ -74,6 +72,7 @@ const PasswordInput = React.forwardRef<
             type={showPassword ? 'text' : 'password'}
             placeholder={placeholder}
             error={error}
+            hideErrorIcon
             warning={capsError ? 'CAPS LOCK may be turned on.' : ''}
             {...props}
             onChange={e => {
@@ -84,7 +83,10 @@ const PasswordInput = React.forwardRef<
 
           <div
             onClick={handleShowHidePassword}
-            className="absolute -translate-y-1/2 cursor-pointer top-1/2 right-3 bottom-[2px]"
+            className={cn(
+              'absolute -translate-y-1/2 cursor-pointer top-1/2 right-3 bottom-[2px]',
+              !!error && '-mt-1',
+            )}
           >
             <Tooltip.Root>
               <Tooltip.Trigger asChild>

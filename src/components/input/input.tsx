@@ -26,6 +26,8 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
     inputClassName?: string;
     warning?: string;
     label?: string;
+    hideErrorIcon?: boolean;
+    errorIcon?: React.ReactNode;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -41,6 +43,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       error,
       warning,
       label,
+      hideErrorIcon,
+      errorIcon = <AlertCircleIcon className="text-error-500" />,
       ...props
     },
     ref,
@@ -54,11 +58,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       inputClassName,
     );
 
-    const endIconOrErrorIcon = error ? (
-      <AlertCircleIcon className="text-error-500" />
-    ) : (
-      endIcon
-    );
+    const endIconOrErrorIcon = error && !hideErrorIcon ? errorIcon : endIcon;
 
     return (
       <div className={cn(className, 'w-full')}>
