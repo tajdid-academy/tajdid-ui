@@ -1,6 +1,7 @@
-import { Input, InputProps, Label, cn } from '@tajdid/tajdid-ui';
-import { PhoneIcon } from '@tajdid/tajdid-ui/icons';
+import { PhoneIcon } from '@/icons';
+import { cn } from '@/utils';
 import React from 'react';
+import { InputProps, Label, Input } from '..';
 
 const PhoneInput = React.forwardRef<HTMLInputElement, InputProps>(
   (
