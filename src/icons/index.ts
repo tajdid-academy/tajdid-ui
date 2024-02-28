@@ -60,6 +60,7 @@ export { default as StopWatchIconIcon } from './stop-watch-icon';
 export { default as SupportIcon } from './support-icon';
 export { default as TagIcon } from './tag-icon';
 export { default as Time } from './time-icon';
+export { default as TicketIcon } from './ticket-icon';
 export { default as ToolTipIcon } from './tool-tip';
 export { default as UserIcon } from './user-icon';
 export { default as UserSquare } from './user-square';
