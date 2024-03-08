@@ -65,8 +65,11 @@ export default function Stepper({
   };
 
   useEffect(() => {
-    if (currentStep && !isUserChangeStep) setActiveStep(`tab${currentStep}`);
-  }, [currentStep, isUserChangeStep]);
+    if (currentStep && !isUserChangeStep) {
+      setActiveStep(`tab${currentStep}`);
+      onStepChange?.(currentStep);
+    }
+  }, [currentStep, isUserChangeStep, onStepChange]);
 
   return (
     <TabsPrimitive.Root
