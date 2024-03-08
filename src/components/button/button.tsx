@@ -65,35 +65,38 @@ export const buttonVariants = cva(
       {
         variant: 'ghost',
         color: 'primary',
-        className: 'text-primary hover:text-primary-700 !shadow-none',
+        className:
+          'text-primary hover:text-primary-700 !shadow-none disabled:bg-transparent',
       },
       {
         variant: 'ghost',
         color: 'error',
-        className: 'text-error hover:text-error-600 !shadow-none',
+        className:
+          'text-error hover:text-error-600 !shadow-none disabled:bg-transparent',
       },
       {
         variant: 'ghost',
         color: 'gray',
-        className: 'text-gray-700 hover:text-gray-600 !shadow-none',
+        className:
+          'text-gray-700 hover:text-gray-600 !shadow-none disabled:bg-transparent',
       },
       {
         variant: 'link',
         color: 'primary',
         className:
-          'text-primary-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
+          'text-primary-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0 disabled:bg-transparent',
       },
       {
         variant: 'link',
         color: 'error',
         className:
-          'text-error-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
+          'text-error-600 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0 disabled:bg-transparent',
       },
       {
         variant: 'link',
         color: 'gray',
         className:
-          'text-gray-700 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0',
+          'text-gray-700 text-sm font-semibold !shadow-none underline-offset-4 hover:underline px-0 py-0 disabled:bg-transparent',
       },
       {
         variant: 'icon',
