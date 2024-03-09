@@ -63,6 +63,7 @@ export { default as RightArrowIcon } from './right-arrow-icon';
 export { default as SearchIcon } from './search-icon';
 export { default as SettingsIcon } from './settings-icon';
 export { default as SpinnerIcon } from './spinner-icon';
+export { default as SpinnerV2 } from './spinnerV2';
 export { default as StopWatchIconIcon } from './stop-watch-icon';
 export { default as SupportIcon } from './support-icon';
 export { default as TagIcon } from './tag-icon';
