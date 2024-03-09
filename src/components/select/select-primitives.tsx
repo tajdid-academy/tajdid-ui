@@ -16,7 +16,7 @@ const SelectGroup = SelectPrimitive.Group;
 const SelectValue = SelectPrimitive.Value;
 
 export const selectTriggerVariants = cva(
-  'flex shadow-xs items-center justify-between whitespace-nowrap rounded-sm border-1 border-gray-300 bg-transparent px-[14px] py-[8px] text-md focus:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+  'flex data-[placeholder]:text-gray-500 shadow-xs items-center justify-between whitespace-nowrap rounded-sm border-1 border-gray-300 bg-transparent px-[14px] py-[8px] text-md focus:outline-none disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       fullWidth: {
@@ -97,7 +97,7 @@ const SelectContent = React.forwardRef<
       className={cn(
         'relative z-50 overflow-hidden rounded-sm border-1 border-gray-100 bg-white shadow-md',
         position === 'popper' &&
-          'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
+          'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1 max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)]',
         className,
       )}
       position={position}
