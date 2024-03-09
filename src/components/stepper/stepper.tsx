@@ -69,7 +69,8 @@ export default function Stepper({
       setActiveStep(`tab${currentStep}`);
       onStepChange?.(currentStep);
     }
-  }, [currentStep, isUserChangeStep, onStepChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStep, isUserChangeStep]);
 
   return (
     <TabsPrimitive.Root
