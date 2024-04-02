@@ -2,7 +2,7 @@ import { CheckSuccessIcon, DotIcon } from '@/icons';
 import DotIconV2 from '@/icons/dot-icon-v2';
 import { cn } from '@/utils';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export type Step = {
   label: string;
@@ -17,12 +17,13 @@ export type StepperProps = {
   tabClassName?: string;
   contentClassName?: string;
   onStepChange?: (step: number) => void;
+  currentStep?: number;
 };
 
 const getActiveStep = (activeStep: string, index: number) => {
   const activeStepNumber = Number(activeStep.replace('tab', ''));
 
-  if (activeStepNumber === index + 1 || activeStepNumber > index + 1) {
+  if (activeStepNumber === index + 1) {
     return true;
   }
 
@@ -31,12 +32,14 @@ const getActiveStep = (activeStep: string, index: number) => {
 
 export default function Stepper({
   steps,
+  currentStep,
   rootClassName,
   tabClassName,
   contentClassName,
   onStepChange,
 }: StepperProps) {
   const [activeStep, setActiveStep] = useState('tab1');
+  const [isUserChangeStep, setIsUserChangeStep] = useState(false);
 
   const getStepState = (
     activeStep: string,
@@ -61,14 +64,25 @@ export default function Stepper({
     return <DotIconV2 />;
   };
 
+  useEffect(() => {
+    if (currentStep && !isUserChangeStep) {
+      setActiveStep(`tab${currentStep}`);
+      onStepChange?.(currentStep);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStep, isUserChangeStep]);
+
   return (
     <TabsPrimitive.Root
       className={rootClassName}
       value={activeStep}
-      defaultValue="tab1"
       onValueChange={value => {
         setActiveStep(value);
         onStepChange?.(Number(value.replace('tab', '')));
+
+        if (!isUserChangeStep) {
+          setIsUserChangeStep(true);
+        }
       }}
     >
       <TabsPrimitive.List

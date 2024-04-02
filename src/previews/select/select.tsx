@@ -43,7 +43,7 @@ const roleOptions = [
 ];
 
 export default function SelectPreview() {
-  const [value, setValue] = useState<string>(roles.superAdmin);
+  const [value, setValue] = useState<string>();
 
   return (
     <Select
@@ -52,6 +52,7 @@ export default function SelectPreview() {
         console.log(e);
         setValue(e);
       }}
+      placeholder="Select Role"
       label="Role"
       options={roleOptions}
     />

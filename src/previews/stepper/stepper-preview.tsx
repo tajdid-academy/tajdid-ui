@@ -27,13 +27,8 @@ const steps = [
 export default function StepperPreview() {
   return (
     <div>
-      <p
-        className="mb-2
-      "
-      >
-        Stepper
-      </p>
-      <Stepper steps={steps} />
+      <p className="mb-2">Stepper</p>
+      <Stepper currentStep={3} steps={steps} />
     </div>
   );
 }

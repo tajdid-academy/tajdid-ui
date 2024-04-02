@@ -11,7 +11,9 @@ export default function ButtonPreview() {
           Contained with icon
         </Button>
         <Button variant="outlined">Outlined</Button>
-        <Button variant="ghost">Ghost</Button>
+        <Button disabled variant="ghost">
+          Ghost
+        </Button>
         <Button variant="link" icon={<HomeIcon />} iconPosition="start">
           Link
         </Button>
