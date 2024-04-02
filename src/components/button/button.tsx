@@ -145,6 +145,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       color,
       children,
       fullWidth,
+      type = 'button',
       ...props
     },
     ref,
@@ -157,6 +158,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           buttonVariants({ variant, size, color, className, fullWidth }),
         )}
         ref={ref}
+        type={type}
         {...props}
       >
         <ButtonContent
