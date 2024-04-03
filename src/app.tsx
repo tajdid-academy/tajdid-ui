@@ -1,4 +1,5 @@
 import { ButtonPreview, StepperPreview, DropdownMenuPreview } from './previews';
+import RadioPreview from './previews/radio/radio-preview';
 import SelectPreview from './previews/select/select';
 import './styles/app.css';
 
@@ -22,6 +23,9 @@ export default function App() {
           </div>
           <div>
             <SelectPreview />
+          </div>
+          <div>
+            <RadioPreview />
           </div>
         </div>
       </div>
