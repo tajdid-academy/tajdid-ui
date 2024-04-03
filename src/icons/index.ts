@@ -42,6 +42,7 @@ export { default as FolderIcon } from './folder-icon';
 export { default as FolderPlusIcon } from './folder-plus-icon';
 export { default as HamburgerMenuIcon } from './hamburger-menu-icon';
 export { default as HamburgerIcon } from './humburger-open-icon';
+export { default as PencilIcon } from './pencil-icon';
 export { default as HomeIcon } from './home-icon';
 export type { IconProps } from './icon-props';
 export { default as InfoCircleIcon } from './info-circle-icon';
