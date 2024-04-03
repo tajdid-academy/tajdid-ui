@@ -21,8 +21,9 @@ export const buttonVariants = cva(
         gray: '',
       },
       size: {
-        medium: 'py-[8px] px-[20px] text-base',
         small: 'py-[6px] px-[14px] text-sm',
+        medium: 'py-2 px-[20px] text-base',
+        large: 'py-3 px-8 text-base',
       },
       fullWidth: {
         true: 'w-full',
