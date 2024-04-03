@@ -18,3 +18,4 @@ export * from './accordion';
 export * from './stepper';
 export * from './dropdown-menu';
 export * from './phone-input';
+export * from './radio';
