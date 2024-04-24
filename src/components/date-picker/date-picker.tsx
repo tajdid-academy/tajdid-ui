@@ -5,8 +5,8 @@ import { format } from 'date-fns';
 import CalendarIcon from '@/icons/calendar-icon';
 import { cn } from '@/utils';
 import { Button } from '../button';
+import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 import { Calendar } from './calendar';
-import { Popover, PopoverContent, PopoverTrigger } from './popover';
 
 type DatePickerProps = {
   date?: Date;
