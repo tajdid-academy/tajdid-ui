@@ -1,3 +1,4 @@
+import { startOfDay } from 'date-fns';
 import { useState } from 'react';
 import DatePicker from './date-picker';
 
@@ -23,7 +24,14 @@ export const Default = {
   args: {},
   render: function Render() {
     const [date, setDate] = useState<Date>();
+    const currentDate = startOfDay(new Date());
 
-    return <DatePicker date={date} handleDate={setDate} />;
+    return (
+      <DatePicker
+        date={date}
+        handleDate={setDate}
+        disabled={date => date < currentDate}
+      />
+    );
   },
 };
