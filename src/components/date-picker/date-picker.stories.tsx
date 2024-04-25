@@ -23,7 +23,15 @@ export const Default = {
   args: {},
   render: function Render() {
     const [date, setDate] = useState<Date>();
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
 
-    return <DatePicker date={date} handleDate={setDate} />;
+    return (
+      <DatePicker
+        date={date}
+        handleDate={setDate}
+        disabled={date => date < currentDate}
+      />
+    );
   },
 };

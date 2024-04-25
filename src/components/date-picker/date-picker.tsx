@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 
 import CalendarIcon from '@/icons/calendar-icon';
 import { cn } from '@/utils';
+import { Matcher } from 'react-day-picker';
 import { Button } from '../button';
 import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 import { Calendar } from './calendar';
@@ -12,12 +13,14 @@ type DatePickerProps = {
   date?: Date;
   handleDate?: (date?: Date) => void;
   error?: string;
+  disabled?: Matcher | Matcher[];
 };
 
 export default function DatePicker({
   date,
   handleDate,
   error,
+  disabled,
 }: DatePickerProps) {
   return (
     <Popover>
@@ -39,6 +42,7 @@ export default function DatePicker({
           selected={date}
           onSelect={handleDate}
           initialFocus
+          disabled={disabled}
         />
       </PopoverContent>
       {error && <div className="text-error-500">{error}</div>}
