@@ -1,3 +1,4 @@
+import { startOfDay } from 'date-fns';
 import { useState } from 'react';
 import DatePicker from './date-picker';
 
@@ -23,8 +24,7 @@ export const Default = {
   args: {},
   render: function Render() {
     const [date, setDate] = useState<Date>();
-    const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
+    const currentDate = startOfDay(new Date());
 
     return (
       <DatePicker
