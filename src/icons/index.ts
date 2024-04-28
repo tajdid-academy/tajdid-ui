@@ -55,6 +55,7 @@ export { default as MedalIcon } from './medal-icon';
 export { default as MinusCircleIcon } from './minus-circle-icon';
 export { default as MinusIcon } from './minus-icon';
 export { default as MortarboardIcon } from './mortarboard';
+export { default as MenuIconV2 } from './menu-icon-v2';
 export { default as PassIcon } from './pass-icon';
 export { default as PenEditIcon } from './pen-edit-icon';
 export { default as PencilIcon } from './pencil-icon';
