@@ -127,7 +127,7 @@ export const ToastViewport = forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      'fixed flex flex-col-reverse gap-3 max-sm:top-20 top-4 right-4 w-80',
+      'fixed flex flex-col-reverse gap-3 max-sm:top-20 top-4 right-4 w-80 z-[9999]',
       className,
     )}
     {...props}
