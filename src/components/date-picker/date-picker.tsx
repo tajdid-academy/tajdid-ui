@@ -6,6 +6,7 @@ import CalendarIcon from '@/icons/calendar-icon';
 import { cn } from '@/utils';
 import { Matcher } from 'react-day-picker';
 import { Button } from '../button';
+import { ErrorMessage } from '../error-message';
 import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 import { Calendar } from './calendar';
 
@@ -45,7 +46,8 @@ export default function DatePicker({
           disabled={disabled}
         />
       </PopoverContent>
-      {error && <div className="text-error-500">{error}</div>}
+
+      <ErrorMessage message={error} />
     </Popover>
   );
 }
