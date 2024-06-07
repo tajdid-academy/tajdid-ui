@@ -1,30 +1,31 @@
-'use client';
-
 import CalendarIcon from '@/icons/calendar-icon';
 import { cn } from '@/utils';
 import { format } from 'date-fns';
 import { useState } from 'react';
-import { Matcher } from 'react-day-picker';
 import ButtonContent from '../button/button-content';
 import { ErrorMessage } from '../error-message';
 import { Label } from '../label';
 import { Popover, PopoverContent, PopoverTrigger } from '../popover';
-import Calendar from './calendar';
+import Calendar, { CalendarProps } from './calendar';
 
-type DatePickerProps = {
+type DatePickerProps = Omit<
+  CalendarProps,
+  'selected' | 'onSelect' | 'onChange'
+> & {
   value?: Date;
   onChange?: (date?: Date) => void;
   error?: string;
-  disabled?: Matcher | Matcher[];
   label?: string;
 };
 
 export default function DatePicker({
   label,
   value,
-  onChange,
   error,
-  disabled,
+  onChange,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  mode, //FIXME: need to fix mode
+  ...props
 }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -52,11 +53,13 @@ export default function DatePicker({
           mode="single"
           selected={value}
           onSelect={date => {
+            if (!date) return;
+
             onChange?.(date);
             date && setIsOpen(false);
           }}
           initialFocus
-          disabled={disabled}
+          {...props}
         />
       </PopoverContent>
 
