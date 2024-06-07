@@ -29,7 +29,7 @@ export const Default = {
     return (
       <DatePicker
         date={date}
-        handleDate={setDate}
+        onChange={setDate}
         disabled={date => date < currentDate}
       />
     );
