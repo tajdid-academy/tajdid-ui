@@ -12,6 +12,8 @@ export { default as CheckIcon } from './check';
 export { default as CheckMarkIcon } from './check-mark-icon';
 export { default as CheckSuccessIcon } from './check-success-icon';
 export { default as CheckV2Icon } from './check-v-2';
+export { default as ContentIcon } from './content-icon';
+export { default as ClockIcon } from './clock-icon';
 export { default as CopyIcon } from './copy-icon';
 export { default as Copy2Icon } from './copy2-icon';
 export { default as CourseIcon } from './course-icon';
