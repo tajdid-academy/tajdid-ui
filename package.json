@@ -1,7 +1,7 @@
 {
   "name": "@tajdid/tajdid-ui",
   "private": false,
-  "version": "0.0.114",
+  "version": "0.0.115",
   "description": "A React UI library for Tajdid Academy",
   "scripts": {
     "dev": "vite",
