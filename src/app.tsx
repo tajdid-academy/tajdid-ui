@@ -1,6 +1,7 @@
 import { ButtonPreview, DropdownMenuPreview, StepperPreview } from './previews';
 import DatePickerPreview from './previews/date-picker/date-picker-preview';
 import InputPreview from './previews/input/input-preview';
+import MultiSelectPreview from './previews/multi-select/multi-select-preview';
 import RadioPreview from './previews/radio/radio-preview';
 import SelectPreview from './previews/select/select';
 import './styles/app.css';
@@ -34,6 +35,9 @@ export default function App() {
           </div>
           <div>
             <DatePickerPreview />
+          </div>
+          <div>
+            <MultiSelectPreview />
           </div>
         </div>
       </div>

@@ -87,7 +87,7 @@ export const badgeVariants = cva(
 );
 
 export type BadgeProps = VariantProps<typeof badgeVariants> & {
-  children: string;
+  children: React.ReactNode;
   className?: string;
   variant?: 'contained' | 'outlined';
 };

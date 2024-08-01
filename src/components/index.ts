@@ -21,3 +21,5 @@ export * from './stepper';
 export * from './text-area';
 export * from './toasts';
 export * from './tooltip';
+export * from './command';
+export * from './multiselect';
