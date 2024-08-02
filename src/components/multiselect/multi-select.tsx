@@ -59,7 +59,7 @@ export function MultiSelect({
 
   return (
     <div className={className}>
-      {label && <Label className={cn('mb-[8px]')}>{label}</Label>}
+      {label && <Label className={cn('mb-2 block')}>{label}</Label>}
       <Command
         onKeyDown={handleKeyDown}
         className={cn('overflow-visible bg-transparent')}
