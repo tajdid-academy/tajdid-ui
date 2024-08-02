@@ -49,7 +49,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         {error && <ErrorMessage message={error} />}
-        {hintText && <p className="font-normal text-gray-600">{hintText}</p>}
+        {hintText && <p className="font-normal text-gray-500">{hintText}</p>}
       </div>
     );
   },

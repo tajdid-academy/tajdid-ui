@@ -7,6 +7,7 @@ import { Badge } from '../badge';
 import { Command, CommandGroup, CommandItem, CommandList } from '../command';
 import XCloseIcon from '@/icons/x-close-icon';
 import { cn } from '@/utils';
+import { Label } from '@radix-ui/react-label';
 
 export type MultiSelectOption = {
   label: string;
@@ -14,6 +15,7 @@ export type MultiSelectOption = {
 };
 
 export type MultiSelectProps = {
+  label?: string;
   className?: string;
   placeholder?: string;
   options: MultiSelectOption[];
@@ -29,6 +31,7 @@ export function MultiSelect({
   className,
   handleSelect,
   handleUnselect,
+  label,
 }: MultiSelectProps) {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [open, setOpen] = React.useState(false);
@@ -55,74 +58,77 @@ export function MultiSelect({
   const selectables = options.filter(option => !selected.includes(option));
 
   return (
-    <Command
-      onKeyDown={handleKeyDown}
-      className={cn('overflow-visible bg-transparent', className)}
-    >
-      <div className="group flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 text-gray-900 font-normal  shadow-xs ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100">
-        <div className="flex flex-wrap gap-1">
-          {selected.map(option => {
-            return (
-              <Badge key={option.value} variant="outlined">
-                {option.label}
-                <button
-                  className="ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                  onKeyDown={e => {
-                    if (e.key === 'Enter') {
-                      handleUnselect(option);
-                    }
-                  }}
-                  onMouseDown={e => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                  }}
-                  onClick={() => handleUnselect(option)}
-                >
-                  <XCloseIcon className="h-3 w-3 text-muted-foreground hover:text-foreground" />
-                </button>
-              </Badge>
-            );
-          })}
-          {/* Avoid having the "Search" Icon */}
-          <CommandPrimitive.Input
-            ref={inputRef}
-            value={inputValue}
-            onValueChange={setInputValue}
-            onBlur={() => setOpen(false)}
-            onFocus={() => setOpen(true)}
-            placeholder={placeholder}
-            className="ml-2 flex-1 bg-transparent outline-none placeholder:text-muted-foreground"
-          />
+    <div className={className}>
+      {label && <Label className={cn('mb-[8px]')}>{label}</Label>}
+      <Command
+        onKeyDown={handleKeyDown}
+        className={cn('overflow-visible bg-transparent')}
+      >
+        <div className="group flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 text-gray-900 font-normal  shadow-xs ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100">
+          <div className="flex flex-wrap gap-1">
+            {selected.map(option => {
+              return (
+                <Badge key={option.value} variant="outlined">
+                  {option.label}
+                  <button
+                    className="ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                    onKeyDown={e => {
+                      if (e.key === 'Enter') {
+                        handleUnselect(option);
+                      }
+                    }}
+                    onMouseDown={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                    onClick={() => handleUnselect(option)}
+                  >
+                    <XCloseIcon className="h-3 w-3 text-muted-foreground hover:text-foreground" />
+                  </button>
+                </Badge>
+              );
+            })}
+            {/* Avoid having the "Search" Icon */}
+            <CommandPrimitive.Input
+              ref={inputRef}
+              value={inputValue}
+              onValueChange={setInputValue}
+              onBlur={() => setOpen(false)}
+              onFocus={() => setOpen(true)}
+              placeholder={placeholder}
+              className="ml-2 flex-1 bg-transparent outline-none placeholder:text-muted-foreground"
+            />
+          </div>
         </div>
-      </div>
-      <div className="relative mt-2">
-        <CommandList>
-          {open && selectables.length > 0 ? (
-            <div className="absolute top-0 z-10 w-full shadow-md outline-none animate-in rounded-sm bg-white border border-gray-300">
-              <CommandGroup className="h-full overflow-auto">
-                {selectables.map(framework => {
-                  return (
-                    <CommandItem
-                      key={framework.value}
-                      onMouseDown={e => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                      }}
-                      onSelect={() => {
-                        setInputValue('');
-                        handleSelect(framework);
-                      }}
-                      className={'cursor-pointer'}
-                    >
-                      {framework.label}
-                    </CommandItem>
-                  );
-                })}
-              </CommandGroup>
-            </div>
-          ) : null}
-        </CommandList>
-      </div>
-    </Command>
+        <div className="relative mt-2">
+          <CommandList>
+            {open && selectables.length > 0 ? (
+              <div className="absolute top-0 z-10 w-full shadow-md outline-none animate-in rounded-sm bg-white border border-gray-300">
+                <CommandGroup className="h-full overflow-auto">
+                  {selectables.map(framework => {
+                    return (
+                      <CommandItem
+                        key={framework.value}
+                        onMouseDown={e => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        }}
+                        onSelect={() => {
+                          setInputValue('');
+                          handleSelect(framework);
+                        }}
+                        className={'cursor-pointer'}
+                      >
+                        {framework.label}
+                      </CommandItem>
+                    );
+                  })}
+                </CommandGroup>
+              </div>
+            ) : null}
+          </CommandList>
+        </div>
+      </Command>
+    </div>
   );
 }
