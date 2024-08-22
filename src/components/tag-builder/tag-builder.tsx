@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Badge } from '../badge';
-import { Input } from '../input';
 
 const TagBuilder = () => {
   const [inputValue, setInputValue] = useState('');
