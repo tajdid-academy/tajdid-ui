@@ -4,6 +4,7 @@ import InputPreview from './previews/input/input-preview';
 import MultiSelectPreview from './previews/multi-select/multi-select-preview';
 import RadioPreview from './previews/radio/radio-preview';
 import SelectPreview from './previews/select/select';
+import TagBuilderPreview from './previews/tag-builder/tag-builder-preview';
 import './styles/app.css';
 
 export default function App() {
@@ -38,6 +39,9 @@ export default function App() {
           </div>
           <div>
             <MultiSelectPreview />
+          </div>
+          <div>
+            <TagBuilderPreview />
           </div>
         </div>
       </div>

@@ -23,3 +23,4 @@ export * from './toasts';
 export * from './tooltip';
 export * from './command';
 export * from './multiselect';
+export * from './tag-builder';

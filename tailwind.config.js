@@ -104,11 +104,6 @@ export default {
         50: '#F5FBEE',
         700: '#3F621A',
       },
-      blueLight: {
-        DEFAULT: '#026AA2',
-        50: '#F0F9FF',
-        700: '#026AA2',
-      },
       purple: {
         DEFAULT: '#5925DC',
         50: '#F4F3FF',

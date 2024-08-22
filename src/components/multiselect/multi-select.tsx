@@ -3,9 +3,9 @@ import * as React from 'react';
 import { Command as CommandPrimitive } from 'cmdk';
 import { Badge } from '../badge';
 import { Command, CommandGroup, CommandItem, CommandList } from '../command';
-import XCloseIcon from '@/icons/x-close-icon';
 import { cn } from '@/utils';
-import { Label } from '@radix-ui/react-label';
+import { Label } from '../label';
+import { DownArrowIcon } from '@/icons';
 
 export type MultiSelectOption = {
   label: string;
@@ -37,6 +37,7 @@ export function MultiSelect({
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const input = inputRef.current;
+
     if (input) {
       if (e.key === 'Delete' || e.key === 'Backspace') {
         if (input.value === '') {
@@ -57,36 +58,30 @@ export function MultiSelect({
 
   return (
     <div className={className}>
-      {label && <Label className={cn('mb-2 block')}>{label}</Label>}
+      {label && <Label className={cn('mb-2')}>{label}</Label>}
       <Command
         onKeyDown={handleKeyDown}
         className={cn('overflow-visible bg-transparent')}
       >
-        <div className="group flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 text-gray-900 font-normal  shadow-xs ring-offset-background  focus-visible:outline-none  focus-visible:border-primary-400 focus-visible: focus:shadow-md  placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100">
-          <div className="flex flex-wrap gap-1">
+        <div className="flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 font-normal  shadow-xs">
+          <div className="flex flex-wrap gap-1 w-full">
             {selected.map(option => {
               return (
-                <Badge key={option.value} variant="outlined">
+                <Badge
+                  color="lightGray"
+                  key={option.value}
+                  onClick={() => handleUnselect(option)}
+                  variant="outlined"
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') {
+                      handleUnselect(option);
+                    }
+                  }}
+                >
                   {option.label}
-                  <button
-                    className="ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                    onKeyDown={e => {
-                      if (e.key === 'Enter') {
-                        handleUnselect(option);
-                      }
-                    }}
-                    onMouseDown={e => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
-                    onClick={() => handleUnselect(option)}
-                  >
-                    <XCloseIcon className="h-3 w-3 text-muted-foreground hover:text-foreground" />
-                  </button>
                 </Badge>
               );
             })}
-            {/* Avoid having the "Search" Icon */}
             <CommandPrimitive.Input
               ref={inputRef}
               value={inputValue}
@@ -94,9 +89,18 @@ export function MultiSelect({
               onBlur={() => setOpen(false)}
               onFocus={() => setOpen(true)}
               placeholder={placeholder}
-              className="ml-2 flex-1 bg-transparent outline-none placeholder:text-muted-foreground"
+              className="placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100 ml-2 flex-1 bg-transparent outline-none"
             />
           </div>
+          <DownArrowIcon
+            onClick={() => {
+              !open && inputRef.current?.focus();
+            }}
+            className={cn(
+              'w-5 h-5 text-gray-500 hover:cursor-pointer',
+              selectables.length > 0 ? 'visible' : 'invisible',
+            )}
+          />
         </div>
         <div className="relative mt-2">
           <CommandList>
