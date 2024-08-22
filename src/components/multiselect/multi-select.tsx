@@ -134,7 +134,7 @@ export function MultiSelect({
           </CommandList>
         </div>
       </Command>
-      {error && <ErrorMessage message={error} />}
+      {error && <ErrorMessage className="mt-0" message={error} />}
     </div>
   );
 }
