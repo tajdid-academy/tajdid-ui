@@ -68,7 +68,7 @@ export function MultiSelect({
             {selected.map(option => {
               return (
                 <Badge
-                  color="lightGray"
+                  color="gray"
                   key={option.value}
                   onClick={() => handleUnselect(option)}
                   variant="outlined"

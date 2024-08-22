@@ -20,7 +20,6 @@ export const badgeVariants = cva(
         blue: '',
         success: '',
         gray: '',
-        lightGray: '',
         warning: '',
       },
     },
@@ -98,22 +97,12 @@ export const badgeVariants = cva(
       {
         variant: 'contained',
         color: 'gray',
-        className: 'bg-gray-700 rounded-lg text-gray-700',
+        className: 'bg-gray-300 rounded-lg text-gray-700',
       },
       {
         variant: 'outlined',
         color: 'gray',
-        className: 'border border-gray-700 rounded-lg text-gray-700',
-      },
-      {
-        variant: 'contained',
-        color: 'lightGray',
-        className: 'bg-gray-300 rounded-lg text-gray-500',
-      },
-      {
-        variant: 'outlined',
-        color: 'lightGray',
-        className: 'border border-gray-300 rounded-lg text-gray-500',
+        className: 'border border-gray-400 rounded-lg text-gray-700',
       },
       {
         variant: 'contained',
@@ -137,7 +126,7 @@ export const badgeVariants = cva(
       },
     ],
     defaultVariants: {
-      variant: 'contained',
+      variant: 'outlined',
       color: 'gray',
     },
   },
@@ -157,7 +146,6 @@ export const badgeButtonVariant = cva(
         blue: '',
         success: '',
         gray: '',
-        lightGray: '',
         warning: '',
       },
     },
@@ -199,10 +187,6 @@ export const badgeButtonVariant = cva(
         className: 'border border-gray-700 rounded-lg text-gray-700',
       },
       {
-        color: 'lightGray',
-        className: 'border border-gray-300 rounded-lg text-gray-700',
-      },
-      {
         color: 'blue',
         className: 'border border-blue-600 rounded-lg text-blue-700',
       },
@@ -212,7 +196,7 @@ export const badgeButtonVariant = cva(
       },
     ],
     defaultVariants: {
-      color: 'moss',
+      color: 'gray',
     },
   },
 );

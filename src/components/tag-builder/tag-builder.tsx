@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Badge } from '../badge';
 import { Input } from '../input';
-import { Button } from '../button';
 
 const TagBuilder = () => {
   const [inputValue, setInputValue] = useState('');
-  const [badges, setBadges] = useState([]);
+  const [badges, setBadges] = useState<string[]>(['react', 'typescript']);
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && inputValue) {
       setBadges([...badges, inputValue]);
       setInputValue('');
@@ -15,26 +14,30 @@ const TagBuilder = () => {
     }
   };
 
-  const handleBadgeDelete = badgeToDelete => {
+  const handleBadgeDelete = (badgeToDelete: string) => {
     setBadges(badges.filter(badge => badge !== badgeToDelete));
   };
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-2 mb-2">
+    <div className="flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 font-normal  shadow-xs">
+      <div className="flex flex-wrap gap-1 w-full">
         {badges.map((badge, index) => (
-          <Badge key={index}>{badge}</Badge>
+          <Badge
+            onClick={() => handleBadgeDelete(badge)}
+            onKeyDown={() => handleBadgeDelete(badge)}
+            key={index}
+          >
+            {badge}
+          </Badge>
         ))}
+        <input
+          value={inputValue}
+          onChange={e => setInputValue(e.target.value)}
+          onKeyDown={handleKeyDown}
+          className="placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100 ml-2 flex-1 bg-transparent outline-none"
+          placeholder="Type and press enter"
+        />
       </div>
-      <Input
-        value={inputValue}
-        onChange={e => setInputValue(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="Type and press enter"
-      />
-      {badges.length > 0 && (
-        <Button onClick={() => setBadges([])}>Clear All</Button> // Optional: Clear all badges
-      )}
     </div>
   );
 };
