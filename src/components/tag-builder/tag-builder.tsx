@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import { Badge } from '../badge';
 import { cn } from '@/utils';
+import { Label } from '../label';
+import { ErrorMessage } from '../error-message';
 
 export type TagBuilderProps = {
   handleEnter: (values: string[]) => void;
   className?: string;
   values?: string[];
+  label?: string;
+  placeholder?: string;
+  error?: string;
 };
 
 const TagBuilder = ({
   values = [],
   handleEnter,
   className,
+  label,
+  placeholder = 'Type and press enter',
+  error,
 }: TagBuilderProps) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -46,6 +54,7 @@ const TagBuilder = ({
         'flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 font-normal  shadow-xs',
       )}
     >
+      {label && <Label className={cn('mb-2')}>{label}</Label>}
       <div className="flex flex-wrap gap-1 w-full">
         {values.map((badge, index) => (
           <Badge
@@ -62,9 +71,10 @@ const TagBuilder = ({
           onChange={e => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
           className="placeholder:text-gray-500 disabled:text-gray-500  disabled:cursor-not-allowed disabled:border-gray-300 disabled:border disabled:bg-gray-100 ml-2 flex-1 bg-transparent outline-none"
-          placeholder="Type and press enter"
+          placeholder={placeholder}
         />
       </div>
+      {error && <ErrorMessage message={error} />}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import { Command, CommandGroup, CommandItem, CommandList } from '../command';
 import { cn } from '@/utils';
 import { Label } from '../label';
 import { DownArrowIcon } from '@/icons';
+import { ErrorMessage } from '../error-message';
 
 export type MultiSelectOption = {
   label: string;
@@ -20,6 +21,7 @@ export type MultiSelectProps = {
   selected: MultiSelectOption[];
   handleUnselect: (option: MultiSelectOption) => void;
   handleSelect: (option: MultiSelectOption) => void;
+  error?: string;
 };
 
 export function MultiSelect({
@@ -30,6 +32,7 @@ export function MultiSelect({
   handleSelect,
   handleUnselect,
   label,
+  error,
 }: MultiSelectProps) {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [open, setOpen] = React.useState(false);
@@ -131,6 +134,7 @@ export function MultiSelect({
           </CommandList>
         </div>
       </Command>
+      {error && <ErrorMessage message={error} />}
     </div>
   );
 }
