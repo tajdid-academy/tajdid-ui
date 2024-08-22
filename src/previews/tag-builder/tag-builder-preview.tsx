@@ -1,5 +1,8 @@
 import { TagBuilder } from '@/components';
+import { useState } from 'react';
 
 export default function TagBuilderPreview() {
-  return <TagBuilder />;
+  const [badges, setBadges] = useState<string[]>(['react', 'typescript']);
+
+  return <TagBuilder values={badges} handleEnter={setBadges} />;
 }

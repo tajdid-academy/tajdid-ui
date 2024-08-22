@@ -8,7 +8,7 @@ import { CheckIcon } from '@/icons';
 export type CheckIcon = React.ReactElement<typeof CheckIcon>;
 
 export const checkboxVariants = cva(
-  'flex h-[20px] w-[20px] appearance-none items-center justify-center rounded-[6px] outline-none',
+  'flex h-[20px] w-[20px] appearance-none items-center justify-center rounded-[6px] outline-none disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       color: {

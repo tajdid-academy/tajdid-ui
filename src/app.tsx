@@ -1,4 +1,5 @@
 import { ButtonPreview, DropdownMenuPreview, StepperPreview } from './previews';
+import CheckPreview from './previews/checkbox/checkbox-preview';
 import DatePickerPreview from './previews/date-picker/date-picker-preview';
 import InputPreview from './previews/input/input-preview';
 import MultiSelectPreview from './previews/multi-select/multi-select-preview';
@@ -9,7 +10,7 @@ import './styles/app.css';
 
 export default function App() {
   return (
-    <div className="container min-h-screen bg-gray-100">
+    <div className="container min-h-screen">
       <h1 className="py-4 text-center text-md">
         Use this to run a local development environment of the library for
         testing.
@@ -31,8 +32,9 @@ export default function App() {
           <div>
             <SelectPreview />
           </div>
-          <div>
+          <div className="flex gap-8">
             <RadioPreview />
+            <CheckPreview />
           </div>
           <div>
             <DatePickerPreview />

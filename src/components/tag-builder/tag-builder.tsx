@@ -1,26 +1,53 @@
 import React, { useState } from 'react';
 import { Badge } from '../badge';
+import { cn } from '@/utils';
 
-const TagBuilder = () => {
+export type TagBuilderProps = {
+  handleEnter: (values: string[]) => void;
+  className?: string;
+  values?: string[];
+};
+
+const TagBuilder = ({
+  values = [],
+  handleEnter,
+  className,
+}: TagBuilderProps) => {
   const [inputValue, setInputValue] = useState('');
-  const [badges, setBadges] = useState<string[]>(['react', 'typescript']);
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && inputValue) {
-      setBadges([...badges, inputValue]);
+      handleEnter([...values, inputValue]);
       setInputValue('');
       event.preventDefault();
     }
+
+    if (event.key === 'Delete' || event.key === 'Backspace') {
+      const newSelected = [...values];
+      const optionValueToRemove = newSelected.pop();
+
+      optionValueToRemove && handleBadgeDelete(optionValueToRemove);
+    }
+
+    if (event.key === 'Escape') {
+      inputRef?.current?.blur();
+    }
   };
 
-  const handleBadgeDelete = (badgeToDelete: string) => {
-    setBadges(badges.filter(badge => badge !== badgeToDelete));
+  const handleBadgeDelete = (valueToDelete: string) => {
+    handleEnter(values.filter(item => item !== valueToDelete));
   };
 
   return (
-    <div className="flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 font-normal  shadow-xs">
+    <div
+      className={cn(
+        className,
+        'flex items-center px-3 py-2 text-base self-stretch w-full rounded-sm bg-white border border-gray-300 font-normal  shadow-xs',
+      )}
+    >
       <div className="flex flex-wrap gap-1 w-full">
-        {badges.map((badge, index) => (
+        {values.map((badge, index) => (
           <Badge
             onClick={() => handleBadgeDelete(badge)}
             onKeyDown={() => handleBadgeDelete(badge)}
@@ -30,6 +57,7 @@ const TagBuilder = () => {
           </Badge>
         ))}
         <input
+          ref={inputRef}
           value={inputValue}
           onChange={e => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
