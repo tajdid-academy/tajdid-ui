@@ -51,7 +51,6 @@ export default function MultiSelectPreview() {
       handleUnselect={handleUnselect}
       placeholder="Select a framework..."
       label="Framework"
-      error="Please select a framework"
     />
   );
 }

@@ -97,12 +97,12 @@ export const badgeVariants = cva(
       {
         variant: 'contained',
         color: 'gray',
-        className: 'bg-gray-300 rounded-lg text-gray-700',
+        className: 'bg-gray-100 rounded-lg text-gray-600',
       },
       {
         variant: 'outlined',
         color: 'gray',
-        className: 'border border-gray-400 rounded-lg text-gray-700',
+        className: 'border border-gray-300 rounded-lg text-gray-600',
       },
       {
         variant: 'contained',
@@ -126,7 +126,7 @@ export const badgeVariants = cva(
       },
     ],
     defaultVariants: {
-      variant: 'outlined',
+      variant: 'contained',
       color: 'gray',
     },
   },
@@ -184,7 +184,7 @@ export const badgeButtonVariant = cva(
       },
       {
         color: 'gray',
-        className: 'border border-gray-700 rounded-lg text-gray-700',
+        className: 'border border-gray-500 rounded-lg text-gray-500',
       },
       {
         color: 'blue',

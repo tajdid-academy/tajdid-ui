@@ -2,6 +2,7 @@ import { ButtonPreview, DropdownMenuPreview, StepperPreview } from './previews';
 import CheckPreview from './previews/checkbox/checkbox-preview';
 import DatePickerPreview from './previews/date-picker/date-picker-preview';
 import InputPreview from './previews/input/input-preview';
+import MultiRangePreview from './previews/multi-range/multi-range-preview';
 import MultiSelectPreview from './previews/multi-select/multi-select-preview';
 import RadioPreview from './previews/radio/radio-preview';
 import SelectPreview from './previews/select/select';
@@ -10,7 +11,7 @@ import './styles/app.css';
 
 export default function App() {
   return (
-    <div className="container min-h-screen">
+    <div className="container min-h-screen pb-10">
       <h1 className="py-4 text-center text-md">
         Use this to run a local development environment of the library for
         testing.
@@ -44,6 +45,9 @@ export default function App() {
           </div>
           <div>
             <TagBuilderPreview />
+          </div>
+          <div>
+            <MultiRangePreview />
           </div>
         </div>
       </div>
