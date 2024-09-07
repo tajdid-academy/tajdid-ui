@@ -25,3 +25,4 @@ export * from './command';
 export * from './multiselect';
 export * from './tag-builder';
 export * from './multi-range';
+export * from './scroll-area';
