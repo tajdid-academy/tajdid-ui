@@ -16,7 +16,8 @@ const dialogMainVariants = cva(
     variants: {
       size: {
         sm: 'w-[400px]',
-        md: 'w-[500px]',
+        md: 'w-[900px]',
+        lg: 'w-[1200]',
       },
     },
     defaultVariants: {
