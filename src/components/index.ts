@@ -26,3 +26,4 @@ export * from './multiselect';
 export * from './tag-builder';
 export * from './multi-range';
 export * from './scroll-area';
+export * from './avatar';
