@@ -1,10 +1,28 @@
-import type { Meta } from '@storybook/react';
+import Avatar from './avatar';
+import { Meta, StoryObj } from '@storybook/react';
 
-import Avatar, { avatarVariants } from './avatar';
-
-const meta = {
-  component: avatarVariants,
-} satisfies Meta<typeof avatarVariants>;
+const meta: Meta = {
+  title: 'Components/Avatar',
+  component: Avatar,
+  parameters: {
+    layout: 'centered',
+  },
+  argTypes: {
+    src: {
+      control: 'text',
+      defaultValue:
+        'https://img.freepik.com/free-photo/3d-illustration-business-man-with-glasses-grey-background-clipping-path_1142-58140.jpg?t=st=1727603124~exp=1727606724~hmac=b0cbb06f2478fe73e0d617d8249428db02d1de37e21155e00463b683dd229144&w=740',
+    },
+    alt: { control: 'text', defaultValue: 'Avatar' },
+    elevation: { control: { type: 'radio' }, options: [0, 1], defaultValue: 0 },
+    size: {
+      control: { type: 'select' },
+      options: ['sm', 'md', 'lg'],
+      defaultValue: 'sm',
+    },
+    border: { control: { type: 'radio' }, options: [0, 1, 2], defaultValue: 0 },
+  },
+};
 
 export default meta;
 
