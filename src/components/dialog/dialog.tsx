@@ -11,7 +11,7 @@ type ChildrenProps = {
 };
 
 const dialogMainVariants = cva(
-  'pt-6 fixed -translate-x-1/2 -translate-y-1/2 bg-white rounded-md top-1/2 left-1/2 max-h-85vh',
+  'py-6 fixed -translate-x-1/2 -translate-y-1/2 bg-white rounded-md top-1/2 left-1/2 max-h-85vh',
   {
     variants: {
       size: {
@@ -96,7 +96,7 @@ const DialogDivider = ({ className }: { className?: string }) => (
 );
 
 const DialogAction = ({ children, className }: ChildrenProps) => (
-  <div className={cn('flex justify-end mt-9 gap-x-3', className)}>
+  <div className={cn('flex justify-end mt-9 gap-x-3 px-6', className)}>
     {children}
   </div>
 );
