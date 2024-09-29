@@ -41,6 +41,7 @@ type Story = StoryObj<typeof meta>;
 export default meta;
 
 export const Default: Story = {
+  //@ts-ignore
   args: {
     label: 'Search phone/email/name',
     placeholder: 'Search...',

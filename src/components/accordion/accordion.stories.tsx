@@ -9,6 +9,7 @@ const meta = {
   },
   argTypes: {
     defaultValue: {
+      //@ts-ignore
       control: { type: 'string' },
       defaultValue: '',
     },
