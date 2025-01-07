@@ -56,7 +56,7 @@ const DialogMain = ({ children, className, size }: DialogMainProps) => {
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay
-        className="fixed inset-0 "
+        className="fixed inset-0 z-50"
         style={{
           background: 'rgba(52, 64, 84, 0.70)',
           backdropFilter: 'blur(8px)',
