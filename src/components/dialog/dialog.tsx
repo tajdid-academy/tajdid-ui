@@ -96,7 +96,7 @@ const DialogDivider = ({ className }: { className?: string }) => (
 );
 
 const DialogAction = ({ children, className }: ChildrenProps) => (
-  <div className={cn('flex justify-end mt-9 gap-x-3 px-6', className)}>
+  <div className={cn('flex justify-end mt-9 gap-x-3', className)}>
     {children}
   </div>
 );
@@ -130,10 +130,10 @@ const DialogCloseButton = () => {
     <DialogPrimitive.Close
       asChild
       aria-label="Close"
-      className="absolute top-6 right-5 focus-visible:outline-none"
+      className="absolute top-3 right-3 focus-visible:outline-none"
     >
       <Button variant="icon">
-        <XCloseIcon className="text-gray-500" width="24" height="24" />
+        <XCloseIcon className="text-gray-500" width="20" height="20" />
       </Button>
     </DialogPrimitive.Close>
   );
