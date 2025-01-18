@@ -103,7 +103,7 @@ export const buttonVariants = cva(
         variant: 'icon',
         color: 'primary',
         className:
-          'text-primary-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-primary-50',
+          'text-primary-600 text-sm font-semibold !shadow-none p-[10px] min-w-0 hover:bg-gray-50',
       },
       {
         variant: 'icon',
