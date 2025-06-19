@@ -16,7 +16,7 @@ export default function App() {
         Use this to run a local development environment of the library for
         testing.
       </h1>
-      <div id="playground" className="flex gap-6">
+      <div id="playground" className="flex gap-6 z-">
         <div className="grid gap-6">
           <div>
             <ButtonPreview />

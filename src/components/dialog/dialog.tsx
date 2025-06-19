@@ -56,14 +56,14 @@ const DialogMain = ({ children, className, size }: DialogMainProps) => {
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay
-        className="fixed inset-0 z-50"
+        className="fixed inset-0 z-40"
         style={{
           background: 'rgba(52, 64, 84, 0.70)',
           backdropFilter: 'blur(8px)',
         }}
       />
       <DialogPrimitive.Content
-        className={cn(dialogMainVariants({ size, className }))}
+        className={cn('z-50', dialogMainVariants({ size, className }))}
       >
         {children}
       </DialogPrimitive.Content>
