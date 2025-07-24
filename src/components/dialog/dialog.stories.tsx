@@ -1,8 +1,7 @@
-import Dialog from './dialog';
-import { Button } from '..';
 import { EmailIcon } from '@/icons';
-import { useArgs } from '@storybook/preview-api';
 import { useState } from 'react';
+import { Button } from '..';
+import Dialog from './dialog';
 
 const meta = {
   title: 'Components/Dialog',
@@ -33,8 +32,15 @@ const meta = {
       defaultValue: 'error',
     },
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
+};
+
+type DialogArgs = {
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  size?: 'sm' | 'md';
+  color?: 'error';
 };
 
 export default meta;
@@ -42,18 +48,17 @@ export default meta;
 export const Default = {
   args: {
     size: 'sm',
-    children: 'Dialog',
     open: false,
   },
-  render: function Render() {
-    const [args] = useArgs();
+  render: function Render(args: DialogArgs) {
     const [open, setOpen] = useState(args.open);
 
     return (
-      <Dialog onOpenChange={open => setOpen(open)} open={open} size={args.size}>
-        <Dialog.Trigger>
-          <Button>Open Dialog</Button>
-        </Dialog.Trigger>
+      <Dialog onOpenChange={setOpen} open={open} size={args.size}>
+        <Button className="p-4" onClick={() => setOpen(true)}>
+          Open Dialog
+        </Button>
+
         <Dialog.Main>
           <Dialog.Title>Logout</Dialog.Title>
           <Dialog.Subtitle>Are you sure you want to logout?</Dialog.Subtitle>
@@ -94,11 +99,8 @@ export const WithHeaderIcon = {
   args: {
     size: 'sm',
     color: 'error',
-    children: 'Dialog',
   },
-  render: function Render() {
-    const [args] = useArgs();
-
+  render: function Render(args: DialogArgs) {
     return (
       <Dialog size={args.size}>
         <Dialog.Trigger>

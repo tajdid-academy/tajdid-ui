@@ -96,7 +96,7 @@ const DialogDivider = ({ className }: { className?: string }) => (
 );
 
 const DialogAction = ({ children, className }: ChildrenProps) => (
-  <div className={cn('flex justify-end mt-9 gap-x-3', className)}>
+  <div className={cn('flex justify-end mt-9 gap-x-3 px-4', className)}>
     {children}
   </div>
 );
