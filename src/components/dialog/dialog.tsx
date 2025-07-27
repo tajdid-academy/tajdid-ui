@@ -11,7 +11,7 @@ type ChildrenProps = {
 };
 
 const dialogMainVariants = cva(
-  'p-3 fixed -translate-x-1/2 -translate-y-1/2 bg-white rounded-md top-1/2 left-1/2 max-h-85vh',
+  'p-5 fixed -translate-x-1/2 -translate-y-1/2 bg-white rounded-md top-1/2 left-1/2 max-h-85vh',
   {
     variants: {
       size: {
@@ -102,7 +102,7 @@ const DialogAction = ({ children, className }: ChildrenProps) => (
 );
 
 const dialogIconVariants = cva(
-  'ml-6 inline-flex  items-center justify-center w-12 h-12 mb-4 border-8 rounded-full ',
+  'inline-flex  items-center justify-center w-12 h-12 mb-4 border-8 rounded-full ',
   {
     variants: {
       color: {
