@@ -73,7 +73,7 @@ const DialogMain = ({ children, className, size }: DialogMainProps) => {
 
 const DialogTitle = ({ children, className }: ChildrenProps) => (
   <DialogPrimitive.Title
-    className={cn('px-6 text-lg font-semibold text-gray-900', className)}
+    className={cn('text-lg font-semibold text-gray-900', className)}
   >
     {children}
   </DialogPrimitive.Title>
@@ -81,18 +81,18 @@ const DialogTitle = ({ children, className }: ChildrenProps) => (
 
 const DialogSubtitle = ({ children, className }: ChildrenProps) => (
   <DialogPrimitive.Title
-    className={cn('mb-2 px-6 text-sm text-gray-600', className)}
+    className={cn('mb-2 text-sm text-gray-600', className)}
   >
     {children}
   </DialogPrimitive.Title>
 );
 
 const DialogContent = ({ children, className }: ChildrenProps) => (
-  <div className={cn('px-6 mt-4', className)}>{children}</div>
+  <div className={cn('mt-4', className)}>{children}</div>
 );
 
 const DialogDivider = ({ className }: { className?: string }) => (
-  <div className={cn('px-6 border-b-1 border-gray-200', className)} />
+  <div className={cn('border-b-1 border-gray-200', className)} />
 );
 
 const DialogAction = ({ children, className }: ChildrenProps) => (
