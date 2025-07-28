@@ -47,7 +47,7 @@ export const Toast = forwardRef<
   { onOpenChange, title, description, variant = 'success', action },
   forwardedRef,
 ) {
-  const width = 416;
+  const width = 320;
   const margin = 16;
 
   return (
