@@ -11,7 +11,7 @@ type ChildrenProps = {
 };
 
 const dialogMainVariants = cva(
-  'py-6 fixed -translate-x-1/2 -translate-y-1/2 bg-white rounded-md top-1/2 left-1/2 max-h-85vh',
+  'p-5 fixed -translate-x-1/2 -translate-y-1/2 bg-white rounded-md top-1/2 left-1/2 max-h-85vh',
   {
     variants: {
       size: {
@@ -73,7 +73,7 @@ const DialogMain = ({ children, className, size }: DialogMainProps) => {
 
 const DialogTitle = ({ children, className }: ChildrenProps) => (
   <DialogPrimitive.Title
-    className={cn('px-6 text-lg font-semibold text-gray-900', className)}
+    className={cn('text-lg font-semibold text-gray-900', className)}
   >
     {children}
   </DialogPrimitive.Title>
@@ -81,28 +81,28 @@ const DialogTitle = ({ children, className }: ChildrenProps) => (
 
 const DialogSubtitle = ({ children, className }: ChildrenProps) => (
   <DialogPrimitive.Title
-    className={cn('mb-2 px-6 text-sm text-gray-600', className)}
+    className={cn('mb-2 text-sm text-gray-600', className)}
   >
     {children}
   </DialogPrimitive.Title>
 );
 
 const DialogContent = ({ children, className }: ChildrenProps) => (
-  <div className={cn('px-6 mt-4', className)}>{children}</div>
+  <div className={cn('mt-4', className)}>{children}</div>
 );
 
 const DialogDivider = ({ className }: { className?: string }) => (
-  <div className={cn('px-6 border-b-1 border-gray-200', className)} />
+  <div className={cn('border-b-1 border-gray-200', className)} />
 );
 
 const DialogAction = ({ children, className }: ChildrenProps) => (
-  <div className={cn('flex justify-end mt-9 gap-x-3 px-4', className)}>
+  <div className={cn('flex justify-end mt-9 gap-x-3', className)}>
     {children}
   </div>
 );
 
 const dialogIconVariants = cva(
-  'ml-6 inline-flex  items-center justify-center w-12 h-12 mb-4 border-8 rounded-full ',
+  'inline-flex  items-center justify-center w-12 h-12 mb-4 border-8 rounded-full ',
   {
     variants: {
       color: {

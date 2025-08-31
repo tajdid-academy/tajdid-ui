@@ -40,6 +40,8 @@ const iconVariants = {
   error: <AlertErrorIcon />,
 };
 
+const margin = 16;
+
 export const Toast = forwardRef<
   ElementRef<typeof ToastPrimitives.Root>,
   ToastProps
@@ -47,9 +49,6 @@ export const Toast = forwardRef<
   { onOpenChange, title, description, variant = 'success', action },
   forwardedRef,
 ) {
-  const width = 416;
-  const margin = 16;
-
   return (
     <ToastPrimitives.Root
       ref={forwardedRef}
@@ -61,7 +60,7 @@ export const Toast = forwardRef<
     >
       <motion.li
         layout
-        initial={{ x: width + margin }}
+        initial={{ x: 320 + margin }} // Mobile width for initial animation
         animate={{ x: 0 }}
         exit={{
           opacity: 0,
@@ -78,7 +77,8 @@ export const Toast = forwardRef<
           damping: 30,
           stiffness: 200,
         }}
-        style={{ width, WebkitTapHighlightColor: 'transparent' }}
+        className="w-80 md:w-[420px]"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
       >
         <div className="flex items-start gap-x-3">
           {variant && <span className="mt-1">{iconVariants[variant]}</span>}
@@ -127,7 +127,7 @@ export const ToastViewport = forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      'fixed flex flex-col-reverse gap-3 max-sm:top-20 top-4 right-4 w-80 z-[9999]',
+      'fixed flex flex-col-reverse gap-3 max-sm:top-20 top-4 right-2 left-2 md:left-0 md:right-4 w-80 md:w-[420px] z-[9999]',
       className,
     )}
     {...props}
