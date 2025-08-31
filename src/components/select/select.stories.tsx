@@ -34,7 +34,8 @@ const meta = {
 type Story = StoryObj<typeof meta>;
 export default meta;
 
-const SelectWrapper = args => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SelectWrapper = (args: any) => {
   const [value, setValue] = useState<string>(args.value);
 
   return (
