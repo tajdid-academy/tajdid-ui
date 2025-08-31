@@ -1,3 +1,4 @@
+import XCloseIcon from '@/icons/x-close-icon';
 import { cn } from '@/utils';
 import { ErrorMessage, Label } from '..';
 import {
@@ -24,6 +25,7 @@ export type SelectProps = {
   labelClassName?: string;
   fullWidth?: boolean;
   error?: string;
+  showClear?: boolean;
 };
 
 export default function SelectComponent({
@@ -37,28 +39,44 @@ export default function SelectComponent({
   fullWidth,
   placeholder = 'Select...',
   error,
+  showClear = true,
 }: SelectProps) {
   return (
     <div className={className}>
       {label && (
         <Label className={cn('mb-[8px]', labelClassName)}>{label}</Label>
       )}
-      <Select disabled={disabled} value={value} onValueChange={onChange}>
-        <SelectTrigger
-          error={!!error}
-          fullWidth={fullWidth}
-          className={cn('min-w-full bg-white')}
-        >
-          <SelectValue placeholder={placeholder} />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map(item => (
-            <SelectItem key={item.value} value={item.value}>
-              {item.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+
+      <div className="relative w-full">
+        <Select disabled={disabled} value={value} onValueChange={onChange}>
+          <SelectTrigger
+            error={!!error}
+            fullWidth={fullWidth}
+            className={cn('w-full bg-white', showClear && value ? 'pr-8' : '')}
+          >
+            <SelectValue placeholder={placeholder} />
+          </SelectTrigger>
+
+          <SelectContent>
+            {options.map(item => (
+              <SelectItem key={item.value} value={item.value}>
+                {item.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        {showClear && value && (
+          <button
+            type="button"
+            onClick={() => onChange?.('')}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-1 hover:bg-gray-100 rounded-full"
+          >
+            <XCloseIcon className="w-4 h-4 text-gray-500" />
+          </button>
+        )}
+      </div>
+
       {error && <ErrorMessage message={error} />}
     </div>
   );
