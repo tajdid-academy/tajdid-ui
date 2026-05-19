@@ -1,4 +1,9 @@
-import { ButtonPreview, DropdownMenuPreview, StepperPreview } from './previews';
+import {
+  ButtonPreview,
+  DropdownMenuPreview,
+  StepperPreview,
+  ToastPreview,
+} from './previews';
 import CheckPreview from './previews/checkbox/checkbox-preview';
 import DatePickerPreview from './previews/date-picker/date-picker-preview';
 import InputPreview from './previews/input/input-preview';
@@ -48,6 +53,9 @@ export default function App() {
           </div>
           <div>
             <MultiRangePreview />
+          </div>
+          <div>
+            <ToastPreview />
           </div>
         </div>
       </div>
