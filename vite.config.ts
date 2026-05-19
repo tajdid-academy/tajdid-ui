@@ -40,10 +40,8 @@ export default defineConfig({
       formats: ['cjs', 'es'],
     },
     rollupOptions: {
-      external: (id) =>
-        externalPackages.some(
-          (pkg) => id === pkg || id.startsWith(`${pkg}/`),
-        ),
+      external: id =>
+        externalPackages.some(pkg => id === pkg || id.startsWith(`${pkg}/`)),
     },
     sourcemap: true,
     emptyOutDir: true,
